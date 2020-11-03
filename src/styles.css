@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+/* ESTE ES EL ESTILO DE TODO EL DASHBOARD */
+:root{
+    --main-color: #6555DF;
+    --d-pink: #FA71A5;
+    --d-yellow: #FFDC60;
+    --d-gray: #BBBBBB;
+    --d-purp-drk: #5C587A;
+    --d-white-drk: #FBFBFB;
+}
