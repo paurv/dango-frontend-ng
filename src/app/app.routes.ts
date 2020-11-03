@@ -1,4 +1,4 @@
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { BancoImagenesComponent } from './components/dash-empresa/banco-imagenes/banco-imagenes.component';
 import { ConfiguracionComponent } from './components/dash-empresa/configuracion/configuracion.component';
 import { PaginasComponent } from './components/dash-empresa/paginas/paginas.component';
