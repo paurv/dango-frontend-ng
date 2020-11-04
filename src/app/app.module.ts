@@ -9,10 +9,11 @@ import { PaginasComponent } from './components/dash-empresa/paginas/paginas.comp
 import { BancoImagenesComponent } from './components/dash-empresa/banco-imagenes/banco-imagenes.component';
 import { ProductosComponent } from './components/dash-empresa/productos/productos.component';
 import { ConfiguracionComponent } from './components/dash-empresa/configuracion/configuracion.component';
-import { ROUTES } from './app.routes';
+import { SitioConfigComponent } from './components/dash-empresa/sitio-config/sitio-config.component';
 
 
 // rutas
+import { ROUTES } from './app.routes';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ROUTES } from './app.routes';
     PaginasComponent,
     BancoImagenesComponent,
     ProductosComponent,
-    ConfiguracionComponent
+    ConfiguracionComponent,
+    SitioConfigComponent
   ],
   imports: [
     BrowserModule,

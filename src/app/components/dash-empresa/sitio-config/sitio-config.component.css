@@ -1,0 +1,83 @@
+
+.nav-name{
+  padding-top: 12px;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  padding-top: 25px;
+  width: 520px;
+  background-color: var(--d-white-drk);
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  padding-left: 30px !important;
+  display: block;
+  color: var(--d-purp-drk);
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: var(--d-purp-drk);
+  color: white;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+div.content {
+    margin-left: 520px;
+  padding: 45px 70px;
+  
+}
+  
+.fixed-top {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+  
+/* SELECTOR IMAGENES || RADIO-BOTONES */
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+  /* outline: 2px solid var(--d-pink); */
+  box-shadow: 0 0 0pt 3pt var(--d-pink);
+  border-radius: 8px;
+}
+
+.descubrir-tags:hover{
+  background-color: #dddddd;
+  cursor: pointer;
+}
+
+input[type=checkbox] {
+    transform: scale(1.5);
+}
+
+.sidebar{
+  color: var(--d-gray-drk);
+}

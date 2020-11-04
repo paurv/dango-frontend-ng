@@ -1,5 +1,5 @@
 /* INPUT FILE */
-[type="file"] {
+/* [type="file"] {
   border: 0;
   clip: rect(0, 0, 0, 0);
   height: 1px;
@@ -11,11 +11,10 @@
 }
   
 [type="file"] + label {
-    /* File upload button styles */
     margin-bottom: 0 !important;
     padding-top: 5px;
     padding-bottom: 5px; 
-}
+} */
   
 /* [type="file"]:focus + label,
 [type="file"] + label:hover { */
@@ -26,7 +25,7 @@
   /* File upload focus state button styles */
 /* } */
 
-.input-div{
+/* .input-div{
     border: 1px solid #d9d9d9;
     height: fit-content;
     border-radius: 4px;
@@ -36,7 +35,7 @@
 .input-div:hover{
     background-color: lightgrey;
     color: #4b4b4b;
-}
+} */
   
  /* cards */
 .config-card{

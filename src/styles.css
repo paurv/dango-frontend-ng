@@ -179,3 +179,34 @@ body {
   background: #555; 
 }
 /* SCROLLBAR */
+
+/* uploadfiles */
+[type="file"] {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  white-space: nowrap;
+  width: 1px;
+}
+  
+[type="file"] + label {
+    margin-bottom: 0 !important;
+    padding-top: 5px;
+    padding-bottom: 5px; 
+}
+
+.input-div{
+  border: 1px solid #d9d9d9;
+  height: fit-content;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.input-div:hover{
+  background-color: lightgrey;
+  color: #4b4b4b;
+}
+/* end - uploadfiles */
