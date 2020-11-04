@@ -8,7 +8,7 @@ export const ROUTES: Routes = [
     { path: 'banco', component: BancoImagenesComponent },
     { path: 'configuracion', component: ConfiguracionComponent },
     { path: 'paginas', component: PaginasComponent },
-    { path: 'productor', component: ProductosComponent },
+    { path: 'productos', component: ProductosComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'paginas' }
 ];
 

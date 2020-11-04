@@ -1,15 +1,181 @@
 /* You can add global styles to this file, and also import other style files */
 /* ESTE ES EL ESTILO DE TODO EL DASHBOARD */
 :root{
-    --main-color: #6555DF;
+    /* --main-color: #6555DF;
     --d-pink: #FA71A5;
     --d-yellow: #FFDC60;
     --d-gray: #BBBBBB;
     --d-purp-drk: #5C587A;
+    --d-white-drk: #FBFBFB; */
+    --main-color: #6555DF;
+    --d-pink: #FA71A5;
+    --d-pink-drk:#aa3d67;
+    --d-yellow: #FFDC60;
+    --d-yellow-drk: #ddbf50;
+    --d-gray: #BBBBBB;
+    --d-purp-drk: #5C587A;
     --d-white-drk: #FBFBFB;
+    --d-gray-txt: #999BA3;
+    --d-gray-drk: #5f5f5f;
 }
 
 body {
   margin: 0;
   font-family: "Lato", sans-serif;
 }
+
+/* BOTONES */
+
+.btn{
+  margin: 2px;
+}
+
+.dg-btn-primero{
+  padding-left: 18px;
+  padding-right: 18px;
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.dg-btn-primero:hover{
+  color: white;
+  background-color: var(--d-purp-drk);
+}
+
+.dg-btn-primero:focus{
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+.dg-btn-segundo{
+  padding-left: 18px;
+  padding-right: 18px;
+  background-color: var(--d-pink);
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.dg-btn-segundo:hover{
+  color: white;
+  background-color: var(--d-pink-drk);
+}
+
+.dg-btn-segundo:focus{
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+.dg-btn-tercero{
+  padding-left: 18px;
+  padding-right: 18px;
+  background-color: var(--d-gray-drk);
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.dg-btn-tercero:hover{
+  color: white;
+  background-color: var(--d-gray-txt);
+}
+
+.dg-btn-tercero:focus{
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+.dg-btn-white{
+  padding-left: 18px;
+  padding-right: 18px;
+  background-color: white;
+  color: var(--main-color);
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.dg-btn-white:hover{
+  color: white;
+  background-color: var(--d-purp-drk);
+}
+
+.dg-btn-white:focus{
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+.dg-btn-delete{
+  background-color: var(--d-pink);
+  color: white;
+  border-radius: 50px;
+  font-weight: 600;
+}
+.dg-btn-delete:hover{
+  color: white;
+  background-color: var(--d-pink-drk);
+}
+
+.dg-btn-delete:focus{
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+.dg-btn-delete-scnd{
+  background-color: var(--d-gray-txt);
+  color: white;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+.dg-btn-delete-scnd:hover{
+  color: white;
+  background-color: var(--d-gray-drk);
+}
+
+.dg-btn-delete-scnd:focus{
+  color: white;
+  background-color: var(--d-gray-drk);
+}
+
+.dg-btn-edit{
+  background-color: var(--d-yellow);
+  color: white;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+.dg-btn-edit:hover{
+  background-color: var(--d-yellow-drk);
+  color: white;
+}
+
+.dg-btn-edit:focus{
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+/* SCROLLBAR */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 12px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 12px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+/* SCROLLBAR */
