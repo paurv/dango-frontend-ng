@@ -1,1 +1,4 @@
-  
+.scroll-lista{
+    height: 448px;
+    overflow: auto;
+}  

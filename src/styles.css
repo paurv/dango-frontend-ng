@@ -26,8 +26,8 @@ body {
 
 /* BOTONES */
 
-.btn{
-  margin: 2px;
+.dg-title-color{
+  color: var(--d-purp-drk);
 }
 
 .dg-btn-primero{
@@ -155,6 +155,24 @@ body {
   outline: 0 !important;
   box-shadow: none !important;
 }
+
+.dg-btn-config{
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+.dg-btn-config:hover{
+  background-color: var(--d-purp-drk);
+  color: white;
+}
+
+.dg-btn-config:focus{
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
 
 /* SCROLLBAR */
 /* width */

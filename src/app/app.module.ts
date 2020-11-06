@@ -14,6 +14,7 @@ import { SitioConfigComponent } from './components/dash-empresa/sitio-config/sit
 
 // rutas
 import { ROUTES } from './app.routes';
+import { TransRutaPipe } from './pipes/trans-ruta.pipe';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ROUTES } from './app.routes';
     BancoImagenesComponent,
     ProductosComponent,
     ConfiguracionComponent,
-    SitioConfigComponent
+    SitioConfigComponent,
+    TransRutaPipe
   ],
   imports: [
     BrowserModule,

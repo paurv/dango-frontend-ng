@@ -6,7 +6,7 @@
             <div class="d-flex justify-content-end col-sm-12 col-md-8">
                 <!-- <button type="button" class="btn dg-btn-primero mb-2">Subir Archivo</button> -->
                 <div class="col-sm-3 input-div">
-                    <input type="file" id="file" />
+                    <input type="file" id="file" #inputfiles />
                     <label for="file"><i class="fas fa-file-import"></i>&nbsp; Subir Archivo</label>
                 </div>
             </div>
@@ -19,13 +19,22 @@
         <!-- contenido Principal -->
         <div class="d-flex justify-content-around dash-menu">
             <div class="d-flex justify-content-center col-4">
-                <a (click)="verMultimedia(1)" class="btn"><i class="far fa-image"></i>&nbsp; Imagenes</a>
+                <a (click)="verMultimedia(1)" class="btn"
+                    [ngStyle]="{'color':tagImagenes === true ? 'var(--main-color)' : 'var(--d-gray-txt)'}">
+                    <i class="far fa-image"></i>&nbsp; Imagenes
+                </a>
             </div>
             <div class="d-flex justify-content-center col-4">
-                <a (click)="verMultimedia(2)" class="btn"><i class="fas fa-film"></i>&nbsp; Videos</a>
+                <a (click)="verMultimedia(2)" class="btn"
+                    [ngStyle]="{'color':tagVideos === true ? 'var(--main-color)' : 'var(--d-gray-txt)'}">
+                    <i class="fas fa-film"></i>&nbsp; Videos
+                </a>
             </div>
             <div class="d-flex justify-content-center col-4">
-                <a (click)="verMultimedia(3)" class="btn"><i class="far fa-file-archive"></i>&nbsp;Archivos</a>
+                <a (click)="verMultimedia(3)" class="btn"
+                    [ngStyle]="{'color':tagArch === true ? 'var(--main-color)' : 'var(--d-gray-txt)'}">
+                    <i class="far fa-file-archive"></i>&nbsp;Archivos
+                </a>
             </div>
         </div>
         <div class="container dash-imagenes">
@@ -35,8 +44,9 @@
                     <img src="assets/img/preview.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <div class="row d-flex align-items-center">
-                            <div class="col-10">
-                                <h5 class="card-title">codeasd456</h5>
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
                             </div>
                             <div class="col-2 d-flex justify-content-end">
                                 <button type="button" class="btn dg-btn-delete-scnd"><i
@@ -49,8 +59,9 @@
                     <img src="assets/img/preview.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <div class="row d-flex align-items-center">
-                            <div class="col-10">
-                                <h5 class="card-title">codeasd456</h5>
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
                             </div>
                             <div class="col-2 d-flex justify-content-end">
                                 <button type="button" class="btn dg-btn-delete-scnd"><i
@@ -63,8 +74,9 @@
                     <img src="assets/img/preview.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <div class="row d-flex align-items-center">
-                            <div class="col-10">
-                                <h5 class="card-title">codeasd456</h5>
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
                             </div>
                             <div class="col-2 d-flex justify-content-end">
                                 <button type="button" class="btn dg-btn-delete-scnd"><i
@@ -77,8 +89,9 @@
                     <img src="assets/img/preview.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <div class="row d-flex align-items-center">
-                            <div class="col-10">
-                                <h5 class="card-title">codeasd456</h5>
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
                             </div>
 
                             <div class="col-2 d-flex justify-content-end">
@@ -97,11 +110,12 @@
                         <source src="movie.mp4" type="video/mp4">
                         <source src="movie.ogg" type="video/ogg">
                         Your browser does not support the video tag.
-                      </video>
+                    </video>
                     <div class="card-body">
                         <div class="row d-flex align-items-center">
-                            <div class="col-10">
-                                <h5 class="card-title">codeasd456</h5>
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
                             </div>
                             <div class="col-2 d-flex justify-content-end">
                                 <button type="button" class="btn dg-btn-delete-scnd"><i
@@ -115,11 +129,12 @@
                         <source src="movie.mp4" type="video/mp4">
                         <source src="movie.ogg" type="video/ogg">
                         Your browser does not support the video tag.
-                      </video>
+                    </video>
                     <div class="card-body">
                         <div class="row d-flex align-items-center">
-                            <div class="col-10">
-                                <h5 class="card-title">codeasd456</h5>
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
                             </div>
                             <div class="col-2 d-flex justify-content-end">
                                 <button type="button" class="btn dg-btn-delete-scnd"><i
@@ -133,11 +148,12 @@
                         <source src="movie.mp4" type="video/mp4">
                         <source src="movie.ogg" type="video/ogg">
                         Your browser does not support the video tag.
-                      </video>
+                    </video>
                     <div class="card-body">
                         <div class="row d-flex align-items-center">
-                            <div class="col-10">
-                                <h5 class="card-title">codeasd456</h5>
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
                             </div>
                             <div class="col-2 d-flex justify-content-end">
                                 <button type="button" class="btn dg-btn-delete-scnd"><i
@@ -151,11 +167,12 @@
                         <source src="movie.mp4" type="video/mp4">
                         <source src="movie.ogg" type="video/ogg">
                         Your browser does not support the video tag.
-                      </video>
+                    </video>
                     <div class="card-body">
                         <div class="row d-flex align-items-center">
-                            <div class="col-10">
-                                <h5 class="card-title">codeasd456</h5>
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
                             </div>
                             <div class="col-2 d-flex justify-content-end">
                                 <button type="button" class="btn dg-btn-delete-scnd"><i
@@ -169,11 +186,12 @@
                         <source src="movie.mp4" type="video/mp4">
                         <source src="movie.ogg" type="video/ogg">
                         Your browser does not support the video tag.
-                      </video>
+                    </video>
                     <div class="card-body">
                         <div class="row d-flex align-items-center">
-                            <div class="col-10">
-                                <h5 class="card-title">codeasd456</h5>
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
                             </div>
                             <div class="col-2 d-flex justify-content-end">
                                 <button type="button" class="btn dg-btn-delete-scnd"><i
@@ -187,11 +205,12 @@
                         <source src="movie.mp4" type="video/mp4">
                         <source src="movie.ogg" type="video/ogg">
                         Your browser does not support the video tag.
-                      </video>
+                    </video>
                     <div class="card-body">
                         <div class="row d-flex align-items-center">
-                            <div class="col-10">
-                                <h5 class="card-title">codeasd456</h5>
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
                             </div>
                             <div class="col-2 d-flex justify-content-end">
                                 <button type="button" class="btn dg-btn-delete-scnd"><i
@@ -206,11 +225,13 @@
             <div class="row" *ngIf="tagArch">
                 <!-- word -->
                 <div class="card col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
-                    <i class="fas fa-file-word fa-7x text-center p-3" data-toggle="tooltip" data-placement="top" title="word"></i>
+                    <i class="fas fa-file-word fa-7x text-center p-3 c-arch" data-toggle="tooltip" data-placement="top"
+                        title="word"></i>
                     <div class="card-body">
                         <div class="row d-flex align-items-center">
-                            <div class="col-10">
-                                <h5 class="card-title">codeasd456</h5>
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
                             </div>
                             <div class="col-2 d-flex justify-content-end">
                                 <button type="button" class="btn dg-btn-delete-scnd"><i
@@ -221,11 +242,13 @@
                 </div>
                 <!-- powerpoint -->
                 <div class="card col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
-                    <i class="fas fa-file-powerpoint fa-7x text-center p-3" data-toggle="tooltip" data-placement="top" title="powerpoint"></i>
+                    <i class="fas fa-file-powerpoint fa-7x text-center p-3 c-arch" data-toggle="tooltip"
+                        data-placement="top" title="powerpoint"></i>
                     <div class="card-body">
                         <div class="row d-flex align-items-center">
-                            <div class="col-10">
-                                <h5 class="card-title">codeasd456</h5>
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
                             </div>
                             <div class="col-2 d-flex justify-content-end">
                                 <button type="button" class="btn dg-btn-delete-scnd"><i
@@ -236,11 +259,13 @@
                 </div>
                 <!-- pdf -->
                 <div class="card col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
-                    <i class="fas fa-file-pdf fa-7x text-center p-3" data-toggle="tooltip" data-placement="top" title="pdf"></i>
+                    <i class="fas fa-file-pdf fa-7x text-center p-3 c-arch" data-toggle="tooltip" data-placement="top"
+                        title="pdf"></i>
                     <div class="card-body">
                         <div class="row d-flex align-items-center">
-                            <div class="col-10">
-                                <h5 class="card-title">codeasd456</h5>
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
                             </div>
                             <div class="col-2 d-flex justify-content-end">
                                 <button type="button" class="btn dg-btn-delete-scnd"><i
@@ -251,11 +276,13 @@
                 </div>
                 <!-- excel -->
                 <div class="card col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
-                    <i class="fas fa-file-excel fa-7x text-center p-3" data-toggle="tooltip" data-placement="top" title="excel"></i>
+                    <i class="fas fa-file-excel fa-7x text-center p-3 c-arch" data-toggle="tooltip" data-placement="top"
+                        title="excel"></i>
                     <div class="card-body">
                         <div class="row d-flex align-items-center">
-                            <div class="col-10">
-                                <h5 class="card-title">codeasd456</h5>
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
                             </div>
                             <div class="col-2 d-flex justify-content-end">
                                 <button type="button" class="btn dg-btn-delete-scnd"><i
@@ -266,11 +293,13 @@
                 </div>
                 <!-- audio -->
                 <div class="card col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
-                    <i class="fas fa-file-audio fa-7x text-center p-3" data-toggle="tooltip" data-placement="top" title="audio"></i>
+                    <i class="fas fa-file-audio fa-7x text-center p-3 c-arch" data-toggle="tooltip" data-placement="top"
+                        title="audio"></i>
                     <div class="card-body">
                         <div class="row d-flex align-items-center">
-                            <div class="col-10">
-                                <h5 class="card-title">codeasd456</h5>
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
                             </div>
                             <div class="col-2 d-flex justify-content-end">
                                 <button type="button" class="btn dg-btn-delete-scnd"><i
@@ -281,11 +310,13 @@
                 </div>
                 <!-- zip -->
                 <div class="card col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
-                    <i class="fas fa-file-archive fa-7x text-center p-3" data-toggle="tooltip" data-placement="top" title="zip"></i>
+                    <i class="fas fa-file-archive fa-7x text-center p-3 c-arch" data-toggle="tooltip"
+                        data-placement="top" title="zip"></i>
                     <div class="card-body">
                         <div class="row d-flex align-items-center">
-                            <div class="col-10">
-                                <h5 class="card-title">codeasd456</h5>
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
                             </div>
                             <div class="col-2 d-flex justify-content-end">
                                 <button type="button" class="btn dg-btn-delete-scnd"><i
@@ -296,11 +327,13 @@
                 </div>
                 <!-- txt -->
                 <div class="card col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
-                    <i class="fas fa-file-alt fa-7x text-center p-3 alt" data-toggle="tooltip" data-placement="top" title="txt"></i>
+                    <i class="fas fa-file-alt fa-7x text-center p-3 alt c-arch" data-toggle="tooltip"
+                        data-placement="top" title="txt"></i>
                     <div class="card-body">
                         <div class="row d-flex align-items-center">
-                            <div class="col-10">
-                                <h5 class="card-title">codeasd456</h5>
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
                             </div>
                             <div class="col-2 d-flex justify-content-end">
                                 <button type="button" class="btn dg-btn-delete-scnd"><i
