@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BancoImagenesComponent implements OnInit {
 
-  tagImagenes: boolean;
+  tagImagenes: boolean = true;
   tagVideos: boolean;
   tagArch: boolean;
+
   constructor() { }
 
   ngOnInit(): void {

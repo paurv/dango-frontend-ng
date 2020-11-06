@@ -3,114 +3,68 @@
     <div class="container">
         <div class="row d-flex justify-content-end">
             <div class="d-flex justify-content-end col-sm-12 col-md-8">
-                <button type="button" class="btn dg-btn-primero mb-2">Agregar Pagina</button>
+                <button type="button" class="btn dg-btn-primero mb-2" data-toggle="modal"
+                    data-target="#exampleModal">Agregar Pagina</button>
             </div>
-            <div class="col-sm-12 col-md-4">
-                <input type="text" class="form-control" aria-describedby="Search" placeholder="Search">
+            <div class="row col-sm-12 col-md-4">
+                <input type="text" class="form-control" placeholder="Buscar Pagina"
+                    (keyup)="buscarPagina(buscarPag.value)" #buscarPag>
             </div>
         </div>
     </div>
     <div class="container mt-5">
         <div class="row">
-            <div class="col-12">
-                <ul class="list-group">
-                    <li class="list-group-item">
+            <div class="col-12 scroll-lista">
+                <!-- Lista de todos los componentes -->
+                <ul class="list-group" *ngIf="buscarPag.value === ''">
+                    <li class="list-group-item" *ngFor="let pagina of paginasEj">
                         <div class="row">
                             <div class="col-8">
                                 <div class="row mt-auto mb-auto pl-4">
-                                    <!-- <h3></h3> -->
-                                    <h4 class="mr-4">Pagina Principal</h4>
+                                    <h4 class="mr-4"> {{pagina.nombre}} </h4>
                                     <p class="font-weight-light text-muted">/paginaprincipl</p>
+                                    <span class="ml-2 text-warning" data-toggle="tooltip" data-placement="top"
+                                        title="Pagina principal" *ngIf="pagina.principal">
+                                        <i class="fas fa-star"></i>
+                                    </span>
                                 </div>
                                 <div class="col-12">
-                                    Descripcion de la pagina Principal
+                                    {{pagina.descripcion}}
                                 </div>
                             </div>
                             <div class="d-flex justify-content-end col-4">
                                 <div class="row d-block mt-auto mb-auto mr-1">
-                                    <button type="button" class="btn dg-btn-delete"><i
-                                            class="far fa-trash-alt"></i></button>
-                                    <a [routerLink]="['/sitio-config']" type="button" class="btn dg-btn-edit"><i
-                                            class="fas fa-pen"></i></a>
+                                    <button type="button" class="btn dg-btn-delete mr-2" data-toggle="tooltip"
+                                        data-placement="top" title="Elliminar">
+                                        <i class="far fa-trash-alt"></i>
+                                    </button>
+                                    <a [routerLink]="['/sitio-config']" type="button" class="btn dg-btn-edit mr-2"
+                                        data-toggle="tooltip" data-placement="top" title="Cambiar Nombre">
+                                        <i class="fas fa-pen"></i></a>
+                                    <button type="button" class="btn dg-btn-config" data-toggle="tooltip"
+                                        data-placement="top" title="Editar Pagina">
+                                        <i class="fas fa-code"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li class="list-group-item">
+                </ul>
+                <!-- lista que se muestra en busqueda -->
+                <ul class="list-group" *ngIf="buscarPag.value !== ''">
+                    <li class="list-group-item" *ngFor="let pagina of pagsArr">
                         <div class="row">
                             <div class="col-8">
                                 <div class="row mt-auto mb-auto pl-4">
-                                    <!-- <h3></h3> -->
-                                    <h4 class="mr-4">Pagina Principal</h4>
+                                    <h4 class="mr-4"> {{pagina.nombre}} </h4>
                                     <p class="font-weight-light text-muted">/paginaprincipl</p>
+                                    <span class="ml-2 text-warning" data-toggle="tooltip" data-placement="top"
+                                        title="Pagina principal" *ngIf="pagina.principal">
+                                        <i class="fas fa-star"></i>
+                                    </span>
                                 </div>
                                 <div class="col-12">
-                                    Descripcion de la pagina Principal
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-end col-4">
-                                <div class="row d-block mt-auto mb-auto mr-1">
-                                    <button type="button" class="btn dg-btn-delete"><i
-                                            class="far fa-trash-alt"></i></button>
-                                    <a [routerLink]="['/sitio-config']" type="button" class="btn dg-btn-edit"><i
-                                            class="fas fa-pen"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-8">
-                                <div class="row mt-auto mb-auto pl-4">
-                                    <!-- <h3></h3> -->
-                                    <h4 class="mr-4">Pagina Principal</h4>
-                                    <p class="font-weight-light text-muted">/paginaprincipl</p>
-                                </div>
-                                <div class="col-12">
-                                    Descripcion de la pagina Principal
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-end col-4">
-                                <div class="row d-block mt-auto mb-auto mr-1">
-                                    <button type="button" class="btn dg-btn-delete"><i
-                                            class="far fa-trash-alt"></i></button>
-                                    <a [routerLink]="['/sitio-config']" type="button" class="btn dg-btn-edit"><i
-                                            class="fas fa-pen"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-8">
-                                <div class="row mt-auto mb-auto pl-4">
-                                    <!-- <h3></h3> -->
-                                    <h4 class="mr-4">Pagina Principal</h4>
-                                    <p class="font-weight-light text-muted">/paginaprincipl</p>
-                                </div>
-                                <div class="col-12">
-                                    Descripcion de la pagina Principal
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-end col-4">
-                                <div class="row d-block mt-auto mb-auto mr-1">
-                                    <button type="button" class="btn dg-btn-delete"><i
-                                            class="far fa-trash-alt"></i></button>
-                                    <a [routerLink]="['/sitio-config']" type="button" class="btn dg-btn-edit"><i
-                                            class="fas fa-pen"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-8">
-                                <div class="row mt-auto mb-auto pl-4">
-                                    <h4 class="mr-4">Pagina Principal</h4>
-                                    <p class="font-weight-light text-muted">/paginaprincipl</p>
-                                </div>
-                                <div class="col-12">
-                                    Descripcion de la pagina Principal
+                                    {{pagina.descripcion}}
                                 </div>
                             </div>
                             <div class="d-flex justify-content-end col-4">
@@ -124,6 +78,34 @@
                         </div>
                     </li>
                 </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal - agregar pagina -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title font-weight-bold dg-title-color" id="exampleModalLabel">Agregar Pagina</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Nombre de Pagina">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Descripcion de Pagina">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn dg-btn-tercero" data-dismiss="modal">Close</button>
+                <button type="button" class="btn dg-btn-primero">Agregar</button>
             </div>
         </div>
     </div>

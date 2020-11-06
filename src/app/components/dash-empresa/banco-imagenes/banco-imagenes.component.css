@@ -37,3 +37,7 @@
     /* width: 100%; */
     object-fit: cover;
 }
+
+.c-arch{
+    color: var(--d-purp-drk);
+}

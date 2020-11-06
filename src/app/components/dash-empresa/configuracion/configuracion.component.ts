@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfiguracionComponent implements OnInit {
 
+  soloLectura: boolean = true;
+  soloLecturaHeader: boolean = true;
+  soloLecturaFooter: boolean = true;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  inputsVal(estado: boolean){
+    if(estado) {
+      // this.modificar = false;
+    }else{
+      // this.modificar = true;
+    }
+  }
 }
