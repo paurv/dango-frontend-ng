@@ -1,17 +1,28 @@
 import { Routes } from '@angular/router';
-import { BancoImagenesComponent } from './components/dash-empresa/banco-imagenes/banco-imagenes.component';
-import { ConfiguracionComponent } from './components/dash-empresa/configuracion/configuracion.component';
-import { PaginasComponent } from './components/dash-empresa/paginas/paginas.component';
-import { ProductosComponent } from './components/dash-empresa/productos/productos.component';
-import { SitioConfigComponent } from './components/dash-empresa/sitio-config/sitio-config.component';
+
+// Componente por carpeta
+import { AdminCompaniesComponent } from './components/dash-empresa/admin-companies.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+
+// Rutas Hijas
+import { COMPANIES_ROUTES } from './components/dash-empresa/companies.routes';
+import { ADMIN_ROUTES } from './components/admin/admin.routes';
+
 
 export const ROUTES: Routes = [
-    { path: 'banco', component: BancoImagenesComponent },
-    { path: 'configuracion', component: ConfiguracionComponent },
-    { path: 'paginas', component: PaginasComponent },
-    { path: 'productos', component: ProductosComponent },
-    { path: 'sitio-config', component: SitioConfigComponent },
-    { path: '**', pathMatch: 'full', redirectTo: 'paginas' }
+    {
+        path: 'admin-companies',
+        component: AdminCompaniesComponent,
+        children: COMPANIES_ROUTES
+    },
+    {
+        path: 'admin',
+        component: AdminComponent,
+        children: ADMIN_ROUTES
+    },
+    { path: 'not-found', component: NotFoundComponent },
+    { path: '**', pathMatch: 'full', redirectTo: 'not-found' },
 ];
 
 // export const appRouting = RouterModule.forRoot(app_routes);

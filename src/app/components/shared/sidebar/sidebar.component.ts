@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  ubicacion: string;
+  dashboard: string;
+
+  constructor( public routerLocationAdm: Router ) {
+    this.ubicacion = routerLocationAdm.url;
+    const partes: string[] = this.ubicacion.split('/');
+    this.dashboard = partes[1];
+    // console.log(this.dashboard);
+  }
 
   ngOnInit(): void {
   }

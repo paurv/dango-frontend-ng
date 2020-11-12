@@ -1,0 +1,10 @@
+#dash-temas .card{
+    max-width: 260px;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+#dash-temas .card-img, .card-img-top{
+    height: 230px;
+    object-fit: cover;
+}

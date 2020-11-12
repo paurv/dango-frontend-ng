@@ -1,6 +1,14 @@
-<div class="sidebar">
-    <a [routerLink]="['/paginas']" routerLinkActive="active"><i class="far fa-file"></i>&nbsp;&nbsp;Paginas</a>
-    <a [routerLink]="['/banco']" routerLinkActive="active"><i class="far fa-images"></i>&nbsp;&nbsp;Banco Imagenes</a>
-    <a [routerLink]="['/productos']" routerLinkActive="active"><i class="fas fa-tags"></i>&nbsp;&nbsp;Productos</a>
-    <a [routerLink]="['/configuracion']" routerLinkActive="active"><i class="fas fa-wrench"></i>&nbsp;&nbsp;Configuracion</a>
+<div class="sidebar mt-4">
+    <div *ngIf="dashboard === 'admin-companies'">
+        <a [routerLink]="['paginas']" routerLinkActive="active"><i class="far fa-file"></i>&nbsp;&nbsp;Paginas</a>
+        <a [routerLink]="['banco']" routerLinkActive="active"><i class="far fa-images"></i>&nbsp;&nbsp;Banco Imagenes</a>
+        <a [routerLink]="['productos']" routerLinkActive="active"><i class="fas fa-tags"></i>&nbsp;&nbsp;Productos</a>
+        <a [routerLink]="['configuracion']" routerLinkActive="active"><i class="fas fa-wrench"></i>&nbsp;&nbsp;Configuracion</a>
+    </div>
+    <div *ngIf="dashboard === 'admin'">
+        <a [routerLink]="['empresas']" routerLinkActive="active"><i class="far fa-file"></i>&nbsp;&nbsp;Empresas</a>
+        <a [routerLink]="['planes']" routerLinkActive="active"><i class="far fa-images"></i>&nbsp;&nbsp;Planes</a>
+        <a [routerLink]="['temas']" routerLinkActive="active"><i class="fas fa-tags"></i>&nbsp;&nbsp;Temas</a>
+        <a [routerLink]="['usuarios']" routerLinkActive="active"><i class="fas fa-wrench"></i>&nbsp;&nbsp;Usuarios</a>
+    </div>
 </div>
