@@ -6,12 +6,10 @@ import { TemasComponent } from './temas/temas.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 
 
-
-
-
 export const ADMIN_ROUTES: Routes = [
     { path: 'empresas', component: EmpresasComponent },
     { path: 'planes', component: PlanesComponent },
     { path: 'temas', component: TemasComponent },
-    { path: 'usuarios', component: UsuariosComponent }
+    { path: 'usuarios', component: UsuariosComponent },
+    { path: '**', pathMatch: 'full', redirectTo: 'empresas' }
 ];

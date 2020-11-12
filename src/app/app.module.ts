@@ -8,6 +8,12 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { SidebarComponent } from './components/shared/sidebar/sidebar.component';
 
+// rutas
+import { ROUTES } from './app.routes';
+
+// pipes
+import { TransRutaPipe } from './pipes/trans-ruta.pipe';
+
 // empresas
 import { PaginasComponent } from './components/dash-empresa/paginas/paginas.component';
 import { BancoImagenesComponent } from './components/dash-empresa/banco-imagenes/banco-imagenes.component';
@@ -19,13 +25,6 @@ import { AdminCompaniesComponent } from './components/dash-empresa/admin-compani
 // admin
 import { EmpresasComponent } from './components/admin/empresas/empresas.component';
 import { AdminComponent } from './components/admin/admin.component';
-
-
-// rutas
-import { ROUTES } from './app.routes';
-
-// pipes
-import { TransRutaPipe } from './pipes/trans-ruta.pipe';
 import { PlanesComponent } from './components/admin/planes/planes.component';
 import { TemasComponent } from './components/admin/temas/temas.component';
 import { UsuariosComponent } from './components/admin/usuarios/usuarios.component';

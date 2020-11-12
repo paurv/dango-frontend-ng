@@ -6,6 +6,7 @@ import { PaginasComponent } from './paginas/paginas.component';
 import { ProductosComponent } from './productos/productos.component';
 import { SitioConfigComponent } from './sitio-config/sitio-config.component';
 
+
 export const COMPANIES_ROUTES: Routes = [
     { path: 'paginas', component: PaginasComponent },
     { path: 'banco', component: BancoImagenesComponent },

@@ -10,11 +10,12 @@ export class SidebarComponent implements OnInit {
 
   ubicacion: string;
   dashboard: string;
+
   constructor( public routerLocationAdm: Router ) {
     this.ubicacion = routerLocationAdm.url;
     const partes: string[] = this.ubicacion.split('/');
     this.dashboard = partes[1];
-    console.log(this.dashboard);
+    // console.log(this.dashboard);
   }
 
   ngOnInit(): void {
