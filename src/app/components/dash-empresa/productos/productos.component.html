@@ -1,0 +1,199 @@
+<div class="content">
+    <!-- DIV BOTONES SUPERIORES -->
+    <div class="container">
+        <div class="row d-flex justify-content-end">
+            <div class="d-flex justify-content-end col-sm-12 col-md-8 mb-2">
+                <button type="button" class="btn dg-btn-segundo mr-2" data-toggle="modal"
+                    data-target="#modal-bancoimg" (click)="categ = true">Gestionar Categorias</button>
+                <button type="button" class="btn dg-btn-primero" data-toggle="modal"
+                data-target="#modal-bancoimg" (click)="categ = false">Nuevo Producto</button>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <input type="text" class="form-control" aria-describedby="Search" placeholder="Search">
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="col-12" id="dash-cont-lista">
+            <table class="table dash-lista-productos">
+                <thead>
+                    <tr>
+                        <th scope="col">Img</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Inventario</th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col">Accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="assets/img/preview.jpeg" alt=""></td>
+                        <td>Producto n</td>
+                        <td>456 en cStok</td>
+                        <td>Categoria x</td>
+                        <td>
+                            <button type="button" class="btn dg-btn-delete mr-2"><i
+                                    class="far fa-trash-alt"></i></button>
+                            <button type="button" class="btn dg-btn-edit"><i class="fas fa-pen"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="assets/img/preview.jpeg" alt=""></td>
+                        <td>Producto n</td>
+                        <td>456 en Stock</td>
+                        <td>Categoria x</td>
+                        <td>
+                            <button type="button" class="btn dg-btn-delete mr-2"><i
+                                    class="far fa-trash-alt"></i></button>
+                            <button type="button" class="btn dg-btn-edit"><i class="fas fa-pen"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="assets/img/preview.jpeg" alt=""></td>
+                        <td>Producto n</td>
+                        <td>456 en Stock</td>
+                        <td>Categoria x</td>
+                        <td>
+                            <button type="button" class="btn dg-btn-delete mr-2"><i
+                                    class="far fa-trash-alt"></i></button>
+                            <button type="button" class="btn dg-btn-edit"><i class="fas fa-pen"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="assets/img/preview.jpeg" alt=""></td>
+                        <td>Producto n</td>
+                        <td>456 en Stock</td>
+                        <td>Categoria x</td>
+                        <td>
+                            <button type="button" class="btn dg-btn-delete mr-2"><i
+                                    class="far fa-trash-alt"></i></button>
+                            <button type="button" class="btn dg-btn-edit"><i class="fas fa-pen"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="assets/img/preview.jpeg" alt=""></td>
+                        <td>Producto n</td>
+                        <td>456 en Stock</td>
+                        <td>Categoria x</td>
+                        <td>
+                            <button type="button" class="btn dg-btn-delete mr-2"><i
+                                    class="far fa-trash-alt"></i></button>
+                            <button type="button" class="btn dg-btn-edit"><i class="fas fa-pen"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="assets/img/preview.jpeg" alt=""></td>
+                        <td>Producto n</td>
+                        <td>456 en Stock</td>
+                        <td>Categoria x</td>
+                        <td>
+                            <button type="button" class="btn dg-btn-delete mr-2"><i
+                                    class="far fa-trash-alt"></i></button>
+                            <button type="button" class="btn dg-btn-edit"><i class="fas fa-pen"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="assets/img/preview.jpeg" alt=""></td>
+                        <td>Producto n</td>
+                        <td>456 en Stock</td>
+                        <td>Categoria x</td>
+                        <td>
+                            <button type="button" class="btn dg-btn-delete mr-2"><i
+                                    class="far fa-trash-alt"></i></button>
+                            <button type="button" class="btn dg-btn-edit"><i class="fas fa-pen"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modal-bancoimg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title dg-title-color font-weight-bold" *ngIf="categ == true">Gestionar Categorias</h5>
+                <h5 class="modal-title dg-title-color font-weight-bold" *ngIf="categ == false">Nuevo Producto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" *ngIf="categ == true">
+                <div class="tabla-cat">
+                    <table class="table text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Accion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Categ1</td>
+                                <td>
+                                    <button type="button" class="btn dg-btn-delete mr-2"><i
+                                            class="far fa-trash-alt"></i></button>
+                                    <button type="button" class="btn dg-btn-edit"><i class="fas fa-pen"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Categ1</td>
+                                <td>
+                                    <button type="button" class="btn dg-btn-delete mr-2"><i
+                                            class="far fa-trash-alt"></i></button>
+                                    <button type="button" class="btn dg-btn-edit"><i class="fas fa-pen"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Categ1</td>
+                                <td>
+                                    <button type="button" class="btn dg-btn-delete mr-2"><i
+                                            class="far fa-trash-alt"></i></button>
+                                    <button type="button" class="btn dg-btn-edit"><i class="fas fa-pen"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Categ1</td>
+                                <td>
+                                    <button type="button" class="btn dg-btn-delete mr-2"><i
+                                            class="far fa-trash-alt"></i></button>
+                                    <button type="button" class="btn dg-btn-edit"><i class="fas fa-pen"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr>
+                <div class="container mt-4 mb-3 col-10">
+                    <input type="email" class="form-control" placeholder="Nueva Categoria">
+                </div>
+            </div>
+            <div class="modal-body" *ngIf="categ == false">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Nombre">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" min="1" max="1000" class="form-control" placeholder="Inventario">
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" id="exampleFormControlSelect1">
+                          <option>-- categoria --</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                        </select>
+                    </div>
+                  </form>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn dg-btn-tercero" data-dismiss="modal">Salir</button>
+                <button type="button" class="btn dg-btn-primero">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>

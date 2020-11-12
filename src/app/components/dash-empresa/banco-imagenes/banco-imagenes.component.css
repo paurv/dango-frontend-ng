@@ -1,0 +1,43 @@
+.dash-menu{
+    border: 1px solid #d1d1d1;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.dash-menu a{
+    text-decoration: none;
+    color: var(--d-gray-txt);
+    font-weight: 700;
+}
+
+.dash-menu a:hover{
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+.dash-menu a:active{
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+.dash-menu a:focus{
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+.dash-imagenes .card{
+    max-width: 260px;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.dash-imagenes .card-img, .card-img-top{
+    height: 230px;
+    /* width: 100%; */
+    object-fit: cover;
+}
+
+.c-arch{
+    color: var(--d-purp-drk);
+}

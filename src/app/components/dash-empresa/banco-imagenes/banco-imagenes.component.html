@@ -1,0 +1,348 @@
+<!-- INICIO DE CONTENIDO -->
+<div class="content">
+    <div class="container">
+        <!-- primeros botones -->
+        <div class="row d-flex justify-content-end">
+            <div class="d-flex justify-content-end col-sm-12 col-md-8">
+                <!-- <button type="button" class="btn dg-btn-primero mb-2">Subir Archivo</button> -->
+                <div class="col-sm-3 input-div">
+                    <input type="file" id="file" #inputfiles />
+                    <label for="file"><i class="fas fa-file-import"></i>&nbsp; Subir Archivo</label>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <input type="text" class="form-control" aria-describedby="Search" placeholder="Search">
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <!-- contenido Principal -->
+        <div class="d-flex justify-content-around dash-menu">
+            <div class="d-flex justify-content-center col-4">
+                <a (click)="verMultimedia(1)" class="btn"
+                    [ngStyle]="{'color':tagImagenes === true ? 'var(--main-color)' : 'var(--d-gray-txt)'}">
+                    <i class="far fa-image"></i>&nbsp; Imagenes
+                </a>
+            </div>
+            <div class="d-flex justify-content-center col-4">
+                <a (click)="verMultimedia(2)" class="btn"
+                    [ngStyle]="{'color':tagVideos === true ? 'var(--main-color)' : 'var(--d-gray-txt)'}">
+                    <i class="fas fa-film"></i>&nbsp; Videos
+                </a>
+            </div>
+            <div class="d-flex justify-content-center col-4">
+                <a (click)="verMultimedia(3)" class="btn"
+                    [ngStyle]="{'color':tagArch === true ? 'var(--main-color)' : 'var(--d-gray-txt)'}">
+                    <i class="far fa-file-archive"></i>&nbsp;Archivos
+                </a>
+            </div>
+        </div>
+        <div class="container dash-imagenes">
+            <!-- imagenes-->
+            <div class="row" *ngIf="tagImagenes">
+                <div class="card col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
+                    <img src="assets/img/preview.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
+                            </div>
+                            <div class="col-2 d-flex justify-content-end">
+                                <button type="button" class="btn dg-btn-delete-scnd"><i
+                                        class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
+                    <img src="assets/img/preview.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
+                            </div>
+                            <div class="col-2 d-flex justify-content-end">
+                                <button type="button" class="btn dg-btn-delete-scnd"><i
+                                        class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
+                    <img src="assets/img/preview.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
+                            </div>
+                            <div class="col-2 d-flex justify-content-end">
+                                <button type="button" class="btn dg-btn-delete-scnd"><i
+                                        class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
+                    <img src="assets/img/preview.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
+                            </div>
+
+                            <div class="col-2 d-flex justify-content-end">
+                                <button type="button" class="btn dg-btn-delete-scnd"><i
+                                        class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- videos -->
+            <div class="row" *ngIf="tagVideos">
+                <div class="card col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
+                    <video controls style="height: fit-content; padding: 6px;">
+                        <source src="movie.mp4" type="video/mp4">
+                        <source src="movie.ogg" type="video/ogg">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="card-body">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
+                            </div>
+                            <div class="col-2 d-flex justify-content-end">
+                                <button type="button" class="btn dg-btn-delete-scnd"><i
+                                        class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
+                    <video controls style="height: fit-content; padding: 6px;">
+                        <source src="movie.mp4" type="video/mp4">
+                        <source src="movie.ogg" type="video/ogg">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="card-body">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
+                            </div>
+                            <div class="col-2 d-flex justify-content-end">
+                                <button type="button" class="btn dg-btn-delete-scnd"><i
+                                        class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
+                    <video controls style="height: fit-content; padding: 6px;">
+                        <source src="movie.mp4" type="video/mp4">
+                        <source src="movie.ogg" type="video/ogg">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="card-body">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
+                            </div>
+                            <div class="col-2 d-flex justify-content-end">
+                                <button type="button" class="btn dg-btn-delete-scnd"><i
+                                        class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
+                    <video controls style="height: fit-content; padding: 6px;">
+                        <source src="movie.mp4" type="video/mp4">
+                        <source src="movie.ogg" type="video/ogg">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="card-body">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
+                            </div>
+                            <div class="col-2 d-flex justify-content-end">
+                                <button type="button" class="btn dg-btn-delete-scnd"><i
+                                        class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
+                    <video controls style="height: fit-content; padding: 6px;">
+                        <source src="movie.mp4" type="video/mp4">
+                        <source src="movie.ogg" type="video/ogg">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="card-body">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
+                            </div>
+                            <div class="col-2 d-flex justify-content-end">
+                                <button type="button" class="btn dg-btn-delete-scnd"><i
+                                        class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
+                    <video controls style="height: fit-content; padding: 6px;">
+                        <source src="movie.mp4" type="video/mp4">
+                        <source src="movie.ogg" type="video/ogg">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="card-body">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
+                            </div>
+                            <div class="col-2 d-flex justify-content-end">
+                                <button type="button" class="btn dg-btn-delete-scnd"><i
+                                        class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- archivos -->
+            <div class="row" *ngIf="tagArch">
+                <!-- word -->
+                <div class="card col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
+                    <i class="fas fa-file-word fa-7x text-center p-3 c-arch" data-toggle="tooltip" data-placement="top"
+                        title="word"></i>
+                    <div class="card-body">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
+                            </div>
+                            <div class="col-2 d-flex justify-content-end">
+                                <button type="button" class="btn dg-btn-delete-scnd"><i
+                                        class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- powerpoint -->
+                <div class="card col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
+                    <i class="fas fa-file-powerpoint fa-7x text-center p-3 c-arch" data-toggle="tooltip"
+                        data-placement="top" title="powerpoint"></i>
+                    <div class="card-body">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
+                            </div>
+                            <div class="col-2 d-flex justify-content-end">
+                                <button type="button" class="btn dg-btn-delete-scnd"><i
+                                        class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- pdf -->
+                <div class="card col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
+                    <i class="fas fa-file-pdf fa-7x text-center p-3 c-arch" data-toggle="tooltip" data-placement="top"
+                        title="pdf"></i>
+                    <div class="card-body">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
+                            </div>
+                            <div class="col-2 d-flex justify-content-end">
+                                <button type="button" class="btn dg-btn-delete-scnd"><i
+                                        class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- excel -->
+                <div class="card col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
+                    <i class="fas fa-file-excel fa-7x text-center p-3 c-arch" data-toggle="tooltip" data-placement="top"
+                        title="excel"></i>
+                    <div class="card-body">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
+                            </div>
+                            <div class="col-2 d-flex justify-content-end">
+                                <button type="button" class="btn dg-btn-delete-scnd"><i
+                                        class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- audio -->
+                <div class="card col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
+                    <i class="fas fa-file-audio fa-7x text-center p-3 c-arch" data-toggle="tooltip" data-placement="top"
+                        title="audio"></i>
+                    <div class="card-body">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
+                            </div>
+                            <div class="col-2 d-flex justify-content-end">
+                                <button type="button" class="btn dg-btn-delete-scnd"><i
+                                        class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- zip -->
+                <div class="card col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
+                    <i class="fas fa-file-archive fa-7x text-center p-3 c-arch" data-toggle="tooltip"
+                        data-placement="top" title="zip"></i>
+                    <div class="card-body">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
+                            </div>
+                            <div class="col-2 d-flex justify-content-end">
+                                <button type="button" class="btn dg-btn-delete-scnd"><i
+                                        class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- txt -->
+                <div class="card col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
+                    <i class="fas fa-file-alt fa-7x text-center p-3 alt c-arch" data-toggle="tooltip"
+                        data-placement="top" title="txt"></i>
+                    <div class="card-body">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-9">
+                                <h6 class="card-title m-0">Name</h6>
+                                <h6 class="card-title m-0 text-muted">codeasd456</h6>
+                            </div>
+                            <div class="col-2 d-flex justify-content-end">
+                                <button type="button" class="btn dg-btn-delete-scnd"><i
+                                        class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

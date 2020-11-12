@@ -1,0 +1,41 @@
+
+.card{
+    width: initial;
+}
+
+.card img{
+    object-fit: contain;
+    padding: 20px;
+    width: 185px;
+    margin: auto;
+}
+
+.plan-dollar-sign{
+    font-size: 30px; 
+    font-weight: 600; 
+    display: flex; 
+    align-items: center; 
+    color: var(--d-purp-drk);
+}
+
+.plan-price-tag{
+    color: var(--main-color);
+}
+
+.plan-title{
+    color: var(--d-dark);
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 700px) {
+    .card{
+        width: initial;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .card{
+        width: fit-content;
+    }
+  }

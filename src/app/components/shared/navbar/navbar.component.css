@@ -1,0 +1,25 @@
+.dash-titulo{
+    color: var(--d-purp-drk);
+    font-size: 25px;
+}
+
+.dash-user{
+    color: var(--d-purp-drk);
+}
+
+.navbarSupportedContent{
+    width: 72%;
+}
+
+.nav-name{
+    padding-top: 10px;
+}
+
+.nav-user{
+    width: 45px;
+    height: 45px;
+}
+
+.img-spc{
+    margin: 0px 25px 0px 25px;
+}

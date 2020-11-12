@@ -1,0 +1,50 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" *ngIf="!(routerLocation.url === '/sitio-config')">
+    <div class="col-8">
+        <div class="row">
+            <img src="assets/img/nav-logo.svg" class="img-fluid img-spc" alt="Dango" style="width: 150px;">
+            <h4 class="d-none d-sm-none d-md-none d-lg-block dash-titulo"
+                style="margin-left: 38px; margin-top: auto; margin-bottom: auto;"> {{routerLocation.url | transRuta}} </h4>
+            <!-- Image and text -->
+            <!-- <nav class="navbar navbar-light bg-light">
+                <a class="navbar-brand dash-titulo font-weight-bold" href="#">
+                    <img src="assets/img/nav-logo.svg" width="130" class="d-inline-block align-top mr-4" alt="Dango"
+                        loading="lazy">
+                    Paginas
+                </a>
+            </nav> -->
+        </div>
+    </div>
+    <div class="col-4 navbarSupportedContent">
+        <div class="d-flex justify-content-end">
+            <div class="row dash-user">
+                <div class="nav-name col-8 d-none d-sm-none d-md-block">
+                    <h5 style="margin:auto;">Maria Lopez</h5>
+                </div>
+                <div class="col-4">
+                    <img src="assets/img/nav-propic.svg" alt="Profile Picture" class="nav-user">
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" *ngIf="routerLocation.url === '/sitio-config'">
+    <div class="col-8">
+        <div class="row">
+            <img src="assets/img/nav-logo.svg" class="img-fluid" alt="Dango" style="width: 150px;">
+            <h4 class="d-none d-sm-none d-md-none d-lg-block dash-titulo"
+                style="margin-left: 38px; margin-top: auto; margin-bottom: auto;">Pagina 1</h4>
+        </div>
+    </div>
+    <div class="col-4 navbarSupportedContent">
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12 d-flex justify-content-end">
+            <div class="row" id="dash-user">
+                <a (click)="regresar()" class="btn dg-btn-tercero" role="button"
+                    style="height: fit-content;"><i class="fas fa-sign-out-alt"></i>&nbsp; Salir</a>
+                <div class="mr-2 d-none d-sm-none d-md-block d-lg-block"></div>
+                <button type="button" class="btn dg-btn-primero"><i class="far fa-save"></i>&nbsp; Guardar</button>
+            </div>
+        </div>
+    </div>
+</nav>
