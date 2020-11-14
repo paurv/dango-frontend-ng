@@ -8,11 +8,14 @@ import { SitioConfigComponent } from './sitio-config/sitio-config.component';
 
 
 export const COMPANIES_ROUTES: Routes = [
-    { path: 'paginas', component: PaginasComponent },
+    { path: 'paginas', component: PaginasComponent, children: [
+        { path: 'sitio-config', component: SitioConfigComponent },
+    ]
+    },
     { path: 'banco', component: BancoImagenesComponent },
     { path: 'productos', component: ProductosComponent },
     { path: 'configuracion', component: ConfiguracionComponent },
-    { path: 'sitio-config', component: SitioConfigComponent },
+    // { path: 'sitio-config', component: SitioConfigComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'paginas' }
 ];
 
