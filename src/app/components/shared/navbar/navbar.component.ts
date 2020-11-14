@@ -13,6 +13,6 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void { }
 
   regresar(){
-    this.routerLocation.navigate(['/configuracion'])
+    this.routerLocation.navigate(['/admin-companies/paginas/']);
   }
 }

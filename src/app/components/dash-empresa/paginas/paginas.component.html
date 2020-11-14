@@ -1,5 +1,6 @@
 <!-- INICIO DE CONTENIDO -->
-<div class="content">
+<!-- <router-outlet *ngIf="ubicacion === '/admin-companies/paginas/sitio-config'"></router-outlet> -->
+<div class="content" *ngIf="ubicPagina.url != '/admin-companies/paginas/sitio-config'">
     <div class="container">
         <div class="row d-flex justify-content-end">
             <div class="d-flex justify-content-end col-sm-12 col-md-8">
@@ -38,7 +39,7 @@
                                         data-placement="top" title="Elliminar">
                                         <i class="far fa-trash-alt"></i>
                                     </button>
-                                    <a [routerLink]="['/sitio-config']" type="button" class="btn dg-btn-edit mr-2"
+                                    <a [routerLink]="['sitio-config']" type="button" class="btn dg-btn-edit mr-2"
                                         data-toggle="tooltip" data-placement="top" title="Cambiar Nombre">
                                         <i class="fas fa-pen"></i></a>
                                     <button type="button" class="btn dg-btn-config" data-toggle="tooltip"

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-paginas',
@@ -36,7 +37,10 @@ export class PaginasComponent implements OnInit {
 
   pagsArr: any[] = [];                           // arreglo temporal para mostrar datos de busqueda
 
-  constructor() { }
+  constructor( public ubicPagina: Router) {
+    // console.log(ubicPagina.url);
+    // /admin-companies/paginas/sitio-config
+  }
 
   ngOnInit(): void {
   }
