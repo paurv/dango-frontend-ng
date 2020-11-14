@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row d-flex justify-content-end">
             <div class="d-flex justify-content-end col-sm-12 col-md-8">
-                <button type="button" class="btn dg-btn-primero mb-2">Nuevo Usuario</button>
+                <button type="button" class="btn dg-btn-primero mb-2" data-toggle="modal" data-target="#modal-usuarios">Nuevo Usuario</button>
             </div>
             <div class="col-sm-12 col-md-4">
                 <input type="text" class="form-control" aria-describedby="Search" placeholder="Search">
@@ -19,15 +19,19 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="row mt-auto mb-auto pl-4">
-                                    <h4 class="mr-4">Tu</h4>
+                                    <h4 class="mr-2">Usuario</h4>
+                                    <h4>Administrador</h4>
                                 </div>
                                 <div class="col-12 pl-2">
-                                    Administrador
+                                    <h5 class="text-muted">asd56df</h5>
+                                </div>
+                                <div class="col-12 pl-2 txt-15">
+                                    Desde: <span class="text-muted">10/12/20</span>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-end col-4">
                                 <div class="row d-block mt-auto mb-auto mr-1">
-                                    <button type="button" class="btn dg-btn-delete"><i
+                                    <button type="button" class="btn dg-btn-delete mr-2"><i
                                             class="far fa-trash-alt"></i></button>
                                     <button type="button" class="btn dg-btn-edit"><i
                                             class="fas fa-pen"></i></button>
@@ -39,15 +43,19 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="row mt-auto mb-auto pl-4">
-                                    <h4 class="mr-4">Usuario one</h4>
+                                    <h4 class="mr-2">Ana Paula</h4>
+                                    <h4>Rivera Posadas</h4>
                                 </div>
                                 <div class="col-12 pl-2">
-                                    Administrador
+                                    <h5 class="text-muted">asd56df</h5>
+                                </div>
+                                <div class="col-12 pl-2 txt-15">
+                                    Desde: <span class="text-muted">10/12/20</span>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-end col-4">
                                 <div class="row d-block mt-auto mb-auto mr-1">
-                                    <button type="button" class="btn dg-btn-delete"><i
+                                    <button type="button" class="btn dg-btn-delete mr-2"><i
                                             class="far fa-trash-alt"></i></button>
                                     <button type="button" class="btn dg-btn-edit"><i
                                             class="fas fa-pen"></i></button>
@@ -59,15 +67,19 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="row mt-auto mb-auto pl-4">
-                                    <h4 class="mr-4">Usuario one</h4>
+                                    <h4 class="mr-2">Nombre Nombre</h4>
+                                    <h4>Apellido Apellido</h4>
                                 </div>
                                 <div class="col-12 pl-2">
-                                    Cliente
+                                    <h5 class="text-muted">asd56df</h5>
+                                </div>
+                                <div class="col-12 pl-2 txt-15">
+                                    Desde: <span class="text-muted">10/12/20</span>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-end col-4">
                                 <div class="row d-block mt-auto mb-auto mr-1">
-                                    <button type="button" class="btn dg-btn-delete"><i
+                                    <button type="button" class="btn dg-btn-delete mr-2"><i
                                             class="far fa-trash-alt"></i></button>
                                     <button type="button" class="btn dg-btn-edit"><i
                                             class="fas fa-pen"></i></button>
@@ -79,35 +91,19 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="row mt-auto mb-auto pl-4">
-                                    <h4 class="mr-4">Usuario one</h4>
+                                    <h4 class="mr-2">Nombre Nombre</h4>
+                                    <h4>Apellido Apellido</h4>
                                 </div>
                                 <div class="col-12 pl-2">
-                                    Empresa
+                                    <h5 class="text-muted">asd56df</h5>
+                                </div>
+                                <div class="col-12 pl-2 txt-15">
+                                    Desde: <span class="text-muted">10/12/20</span>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-end col-4">
                                 <div class="row d-block mt-auto mb-auto mr-1">
-                                    <button type="button" class="btn dg-btn-delete"><i
-                                            class="far fa-trash-alt"></i></button>
-                                    <button type="button" class="btn dg-btn-edit"><i
-                                            class="fas fa-pen"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-8">
-                                <div class="row mt-auto mb-auto pl-4">
-                                    <h4 class="mr-4">Usuario one</h4>
-                                </div>
-                                <div class="col-12 pl-2">
-                                    Cliente
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-end col-4">
-                                <div class="row d-block mt-auto mb-auto mr-1">
-                                    <button type="button" class="btn dg-btn-delete"><i
+                                    <button type="button" class="btn dg-btn-delete mr-2"><i
                                             class="far fa-trash-alt"></i></button>
                                     <button type="button" class="btn dg-btn-edit"><i
                                             class="fas fa-pen"></i></button>
@@ -116,6 +112,44 @@
                         </div>
                     </li>
                 </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modal-usuarios" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title dg-title-color font-weight-bold">Nuevo Usuario</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group mb-4">
+                        <label for="">Nombre</label>
+                        <input type="text" class="form-control" id="" placeholder="Nombre">
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="">Apellido</label>
+                        <input type="text" class="form-control" id="" placeholder="Apellido">
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="">Clave</label>
+                        <input type="password" class="form-control" id="">
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="">Confimar Clave</label>
+                        <input type="password" class="form-control" id="">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn dg-btn-tercero" data-dismiss="modal">Close</button>
+                <button type="button" class="btn dg-btn-primero">Guardar</button>
             </div>
         </div>
     </div>

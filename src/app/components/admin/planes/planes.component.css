@@ -20,11 +20,37 @@
 
 .plan-price-tag{
     color: var(--main-color);
+    font-size: 50px; 
+    font-weight: 900;
 }
 
 .plan-title{
-    color: var(--d-dark);
+    color: var(--d-purp-drk);
+    font-size: 26px;
 }
+
+/* checkbox imagen */
+.label-check:before {
+    content: url("https://cdn1.iconfinder.com/data/icons/windows8_icons_iconpharm/26/unchecked_checkbox.png");
+    position: absolute;
+    z-index: 100;
+  }
+
+  :checked+.label-check:before {
+    content: url("https://cdn1.iconfinder.com/data/icons/windows8_icons_iconpharm/26/checked_checkbox.png");
+  }
+
+  input[type=radio] {
+    display: none;
+  }
+  /*pure cosmetics:*/
+  .img-check {
+    width: 100px;
+    height: 100px;
+  }
+  .label-check {
+    margin: 10px;
+  }
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 700px) {

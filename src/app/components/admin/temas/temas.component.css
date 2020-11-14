@@ -8,3 +8,23 @@
     height: 230px;
     object-fit: cover;
 }
+
+.lh{
+    padding-top: 8px;
+    border-top: 1px solid #c8c8c8;
+}
+
+.imgs-tema{
+    object-fit: cover;
+    padding: 5px;
+    border: 1px solid lightgray;
+}
+
+.of-cont-temas{
+    height: 500px; 
+    overflow: auto;
+}
+
+.vr-temas{
+    border-right: 1px solid lightgray;
+}
