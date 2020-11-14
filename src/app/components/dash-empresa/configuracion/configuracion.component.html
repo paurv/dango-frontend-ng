@@ -17,26 +17,29 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Titulo</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="Titulo del sitio Web" [readonly]="soloLectura">
+                        <input type="text" class="form-control" placeholder="Titulo del sitio Web"
+                            [readonly]="soloLectura">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Descripcion</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="Esta es una descripcion" [readonly]="soloLectura">
+                        <input type="text" class="form-control" placeholder="Esta es una descripcion"
+                            [readonly]="soloLectura">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Palabras Clave</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="palabra1, palabra2, palabra3, palabra4" [readonly]="soloLectura">
+                        <input type="text" class="form-control" placeholder="palabra1, palabra2, palabra3, palabra4"
+                            [readonly]="soloLectura">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group row col-md-6 mr-4">
                         <label class="col-sm-2 col-form-label">Logotipo</label>
                         <div class="col-sm-8 input-div">
-                            <input type="file" id="file"/>
+                            <input type="file" id="file" />
                             <label for="file"><i class="fas fa-file-import"></i>&nbsp; Subir Archivo</label>
                         </div>
                     </div>
@@ -45,14 +48,21 @@
                         <div class="col-sm-8 input-div">
                             <input type="file" id="file" />
                             <label for="file"><i class="fas fa-file-import"></i>&nbsp; Subir Archivo</label>
+                            <!-- <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                              </div> -->
                         </div>
                     </div>
                 </div>
                 <div class="form-group row mt-4">
                     <div class="col-sm-10 d-flex justify-content-center">
-                        <button type="button" class="btn dg-btn-tercero col-4 mr-2" (click)="soloLectura = true" *ngIf="!soloLectura" >Cancelar</button>
-                        <button type="button" class="btn dg-btn-primero col-4" (click)="soloLectura = false" *ngIf="soloLectura">Editar</button>
-                        <button type="button" class="btn dg-btn-primero col-4 mr-2" (click)="soloLectura = true" *ngIf="!soloLectura">Guardar</button>
+                        <button type="button" class="btn dg-btn-tercero col-4 mr-2" (click)="soloLectura = true"
+                            *ngIf="!soloLectura">Cancelar</button>
+                        <button type="button" class="btn dg-btn-primero col-4" (click)="soloLectura = false"
+                            *ngIf="soloLectura">Editar</button>
+                        <button type="button" class="btn dg-btn-primero col-4 mr-2" (click)="soloLectura = true"
+                            *ngIf="!soloLectura">Guardar</button>
                     </div>
                 </div>
             </form>
@@ -65,13 +75,15 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Titulo</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="Titulo de header" [readonly]="soloLecturaHeader">
+                        <input type="text" class="form-control" placeholder="Titulo de header"
+                            [readonly]="soloLecturaHeader">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Subtitulo</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="Subtitulo..." [readonly]="soloLecturaHeader">
+                        <input type="text" class="form-control" placeholder="Subtitulo..."
+                            [readonly]="soloLecturaHeader">
                     </div>
                 </div>
                 <div class="form-group row" style="width: 101%;">
@@ -84,9 +96,12 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-10 d-flex justify-content-center">
-                        <button type="button" class="btn dg-btn-tercero col-4 mr-2" (click)="soloLecturaHeader = true" *ngIf="!soloLecturaHeader" >Cancelar</button>
-                        <button type="button" class="btn dg-btn-primero col-4" (click)="soloLecturaHeader = false" *ngIf="soloLecturaHeader">Editar</button>
-                        <button type="button" class="btn dg-btn-primero col-4 mr-2" (click)="soloLecturaHeader = true" *ngIf="!soloLecturaHeader">Guardar</button>
+                        <button type="button" class="btn dg-btn-tercero col-4 mr-2" (click)="soloLecturaHeader = true"
+                            *ngIf="!soloLecturaHeader">Cancelar</button>
+                        <button type="button" class="btn dg-btn-primero col-4" (click)="soloLecturaHeader = false"
+                            *ngIf="soloLecturaHeader">Editar</button>
+                        <button type="button" class="btn dg-btn-primero col-4 mr-2" (click)="soloLecturaHeader = true"
+                            *ngIf="!soloLecturaHeader">Guardar</button>
                     </div>
                 </div>
             </form>
@@ -98,7 +113,8 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="miemail@mail.com" [readonly]="soloLecturaFooter">
+                        <input type="text" class="form-control" placeholder="miemail@mail.com"
+                            [readonly]="soloLecturaFooter">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -109,9 +125,12 @@
                 </div>
                 <div class="form-group row mt-5">
                     <div class="col-sm-10 d-flex justify-content-center">
-                        <button type="button" class="btn dg-btn-tercero col-4 mr-2" (click)="soloLecturaFooter = true" *ngIf="!soloLecturaFooter" >Cancelar</button>
-                        <button type="button" class="btn dg-btn-primero col-4" (click)="soloLecturaFooter = false" *ngIf="soloLecturaFooter">Editar</button>
-                        <button type="button" class="btn dg-btn-primero col-4 mr-2" (click)="soloLecturaFooter = true" *ngIf="!soloLecturaFooter">Guardar</button>
+                        <button type="button" class="btn dg-btn-tercero col-4 mr-2" (click)="soloLecturaFooter = true"
+                            *ngIf="!soloLecturaFooter">Cancelar</button>
+                        <button type="button" class="btn dg-btn-primero col-4" (click)="soloLecturaFooter = false"
+                            *ngIf="soloLecturaFooter">Editar</button>
+                        <button type="button" class="btn dg-btn-primero col-4 mr-2" (click)="soloLecturaFooter = true"
+                            *ngIf="!soloLecturaFooter">Guardar</button>
                     </div>
                 </div>
             </form>

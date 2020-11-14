@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-temas',
@@ -12,4 +13,7 @@ export class TemasComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  mostrarModal(valor?: string){
+    $('#modal-tema').modal('show');
+  }
 }

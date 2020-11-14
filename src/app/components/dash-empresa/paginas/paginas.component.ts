@@ -42,7 +42,7 @@ export class PaginasComponent implements OnInit {
   }
 
   buscarPagina(termino: string) {
-    console.log(termino);
+    // console.log(termino);
     this.pagsArr = [];
     termino = termino.toLowerCase();
     for (let paginas of this.paginasEj) {
