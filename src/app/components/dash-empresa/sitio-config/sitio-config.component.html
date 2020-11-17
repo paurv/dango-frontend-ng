@@ -2,60 +2,129 @@
 <div class="sidebar">
     <div class="container mb-3">
         <div class="row">
-            <h3 class="mr-2 ml-3 tile-primero">Contenido</h3>
-            <button type="button" class="btn dg-btn-delete" aria-labelledby="ejecutar"><i
-                    class="fas fa-terminal"></i></button>
+            <h4 class="mr-2 ml-3 tile-primero mt-auto mb-auto">Contenido</h4>
+            <button type="button" class="btn dg-btn-delete" aria-labelledby="ejecutar"
+                (click)="contenidoCodigo(cmXml, cmCss, cmJs)"><i class="fas fa-terminal"></i>&nbsp; Ejecutar</button>
             <div class="container">
             </div>
         </div>
     </div>
-    <div class="container mb-3">
-        <h5>HTML</h5>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    </div>
-    <div class="container mb-3">
-        <h5>Css</h5>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    </div>
-    <div class="container mb-3">
-        <h5>Js</h5>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    </div>
-    <div class="container mt-2">
-        <h3 class="tile-primero">Componentes</h3>
-    </div>
-    <div class="container">
-        <div class="form-check d-flex align-items-center mb-2" style="font-size: 25px;">
-            <input class="form-check-input" type="checkbox" value="" id="chk-header">
-            <label class="form-check-label" for="chk-header" style="padding-top: 6px;">
-                Header
-            </label>
+    <div class="contenedor-editores">
+        <div class="container mb-3">
+            <h5>HTML</h5>
+            <!-- <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> -->
+            <div class="container cm-altura">
+                <ngx-codemirror [options]="{
+                      mode: 'xml',
+                      theme: 'dracula',
+                      lineNumbers: true,
+                      autoCloseTags: true,
+                      matchTags: true }" [(ngModel)]="codeMirrorXml" #cmXml></ngx-codemirror>
+            </div>
         </div>
-        <div class="form-check d-flex align-items-center mb-2" style="font-size: 25px;">
-            <input class="form-check-input" type="checkbox" value="" id="chk-footer">
-            <label class="form-check-label" for="chk-footer" style="padding-top: 6px;">
-                Footer
-            </label>
+        <hr>
+        <div class="container mb-3">
+            <h5>Css</h5>
+            <!-- <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> -->
+            <div class="container cm-altura">
+                <ngx-codemirror [options]="{
+                      mode: 'css',
+                      theme: 'dracula',
+                      lineNumbers: true,
+                      autoCloseTags: true
+                    }" #cmCss></ngx-codemirror>
+            </div>
+        </div>
+        <div class="container mb-3">
+            <h5>Js</h5>
+            <!-- <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> -->
+            <div class="container cm-altura">
+                <ngx-codemirror [options]="{
+                      mode: 'javascript',
+                      theme: 'dracula',
+                      lineNumbers: true,
+                      autoCloseTags: true
+                    }" #cmJs></ngx-codemirror>
+            </div>
+        </div>
+        <div class="container">
+            <div class="form-check d-flex align-items-center mb-2" style="font-size: 25px;">
+                <input class="form-check-input" type="checkbox" value="" id="chk-header">
+                <label class="form-check-label" for="chk-header" style="padding-top: 6px;">
+                    Header
+                </label>
+            </div>
+            <div class="form-check d-flex align-items-center mb-2" style="font-size: 25px;">
+                <input class="form-check-input" type="checkbox" value="" id="chk-footer">
+                <label class="form-check-label" for="chk-footer" style="padding-top: 6px;">
+                    Footer
+                </label>
+            </div>
         </div>
     </div>
 </div>
 
-<!-- INICIO DE CONTENIDO INTERNO-->
-<div class="content">
-    <div class="container" style="height: 400px; border-radius: 12px; border: 1px solid lightslategray;">
-        <p class="text-muted">aqui se iran añadiendo los bloques de contenido de la pagina</p>
+<div class="content-bloques mt-5" style="width: 1072px;">
+    <div class="container" style="border-radius: 6px; height: 550px; overflow: auto; border: 1px solid #dfdfdf;">
+        <!-- <p class="text-muted">aqui se iran añadiendo los bloques de contenido de la pagina</p> -->
+        <div class="editor container p-0" id="contenido-codigo" *ngFor="let cuadros of arregloHtml; let i = index">
+            <div class="row">
+                <div class="col-12 p-0" (click)="selector('cuadro-'+cuadros.id +'-'+ cuadros.contenido[0].orden)"
+                    *ngIf="cuadros.tipo === 1">
+                    <iframe id="cuadro-{{cuadros.id}}-{{cuadros.contenido[0].orden}}"
+                        style="width: -webkit-fill-available; height: -webkit-fill-available;"></iframe>
+                    <div class="pantalla"></div>
+                </div>
+            </div>
+            <div class="row" *ngIf="cuadros.tipo === 2">
+                <div class="col-6 p-0" (click)="selector('cuadro-'+cuadros.id +'-'+ cuadros.contenido[0].orden)"
+                    *ngIf="cuadros.contenido[0]">
+                    <iframe id="cuadro-{{cuadros.id}}-{{cuadros.contenido[0].orden}}"
+                        style="width: -webkit-fill-available; height: -webkit-fill-available;"></iframe>
+                    <div class="pantalla"></div>
+                </div>
+                <div class="col-6 p-0" (click)="selector('cuadro-'+cuadros.id +'-'+ cuadros.contenido[1].orden)"
+                    *ngIf="cuadros.contenido[1]">
+                    <iframe id="cuadro-{{cuadros.id}}-{{cuadros.contenido[1].orden}}"
+                        style="width: -webkit-fill-available; height: -webkit-fill-available;"></iframe>
+                    <div class="pantalla"></div>
+                </div>
+            </div>
+            <div class="row" *ngIf="cuadros.tipo === 3">
+                <div class="col-4 p-0" (click)="selector('cuadro-'+cuadros.id +'-'+ cuadros.contenido[0].orden)"
+                    *ngIf="cuadros.contenido[0]">
+                    <iframe id="cuadro-{{cuadros.id}}-{{cuadros.contenido[0].orden}}"
+                        style="width: -webkit-fill-available; height: -webkit-fill-available;"></iframe>
+                    <div class="pantalla"></div>
+                </div>
+                <div class="col-4 p-0" (click)="selector('cuadro-'+cuadros.id +'-'+ cuadros.contenido[1].orden)"
+                    *ngIf="cuadros.contenido[1]">
+                    <iframe id="cuadro-{{cuadros.id}}-{{cuadros.contenido[1].orden}}"
+                        style="width: -webkit-fill-available; height: -webkit-fill-available;"></iframe>
+                    <div class="pantalla"></div>
+                </div>
+                <div class="col-4 p-0" (click)="selector('cuadro-'+cuadros.id +'-'+ cuadros.contenido[2].orden)"
+                    *ngIf="cuadros.contenido[2]">
+                    <iframe id="cuadro-{{cuadros.id}}-{{cuadros.contenido[2].orden}}"
+                        style="width: -webkit-fill-available; height: -webkit-fill-available;"></iframe>
+                    <div class="pantalla"></div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="container">
-        <div class="col-12 d-flex justify-content-center">
-            <button type="button" class="btn dg-btn-delete m-3" data-toggle="modal" data-target="#modal-add-cont"><i
-                    class="fas fa-plus" style="font-size: 50px;"></i></button>
+        <div class="col-12 text-center">
+            <button type="button" class="btn dg-btn-delete m-3" data-toggle="modal" data-target="#modal-add-cont"
+                (click)="abrirModal()">
+                <i class="fas fa-plus" style="font-size: 50px;"></i>
+            </button>
         </div>
     </div>
 </div>
 
 <!-- MODAL AGREGAR-CONTENIDO -->
 <!-- Modal -->
-<div class="modal fade" id="modal-add-cont" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal-add-cont" tabindex="-1" *ngIf="verModal">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -68,19 +137,20 @@
                 <div class="container" style="width: 400px;">
                     <div class="row ml-2" id="radio-perfil">
                         <label>
-                            <input type="radio" name="rad-perf" checked>
+                            <input #cont1 id="cont1" type="radio" value="1" name="rad-perf" [checked]="checkDiv"
+                                (change)="radioSeleccionado($event)">
                             <img src="assets/img/cont-1.svg" class="img-fluid" alt="Responsive image"
                                 style="height: 130px;">
                             <h5>Simple</h5>
                         </label>
                         <label>
-                            <input type="radio" name="rad-perf">
+                            <input #cont2 type="radio" value="2" name="rad-perf" (change)="radioSeleccionado($event)">
                             <img src="assets/img/cont-2.svg" class="img-fluid" alt="Responsive image"
                                 style="height: 130px;">
                             <h5>Doble</h5>
                         </label>
                         <label>
-                            <input type="radio" name="rad-perf">
+                            <input #cont3 type="radio" value="3" name="rad-perf" (change)="radioSeleccionado($event)">
                             <img src="assets/img/cont-3.svg" class="img-fluid" alt="Responsive image"
                                 style="height: 130px;">
                             <h5>Triple</h5>
@@ -90,7 +160,8 @@
             </div>
             <div class="modal-footer d-flex justify-content-center">
                 <button type="button" class="btn dg-btn-tercero" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn dg-btn-segundo">Aceptar</button>
+                <button type="button" class="btn dg-btn-segundo" (click)="aggContenido()"
+                    data-dismiss="modal">Aceptar</button>
             </div>
         </div>
     </div>

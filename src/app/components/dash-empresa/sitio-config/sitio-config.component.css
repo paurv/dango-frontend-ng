@@ -7,7 +7,7 @@
   margin: 0;
   padding: 0;
   padding-top: 25px;
-  width: 520px;
+  width: 450px;
   background-color: var(--d-white-drk);
   position: fixed;
   height: 100%;
@@ -36,9 +36,9 @@
   margin: 10px;
 }
 
-div.content {
-    margin-left: 520px;
-  padding: 45px 70px;
+.content-bloques {
+  margin-left: 450px;
+  padding: 25px 70px;
   
 }
   
@@ -80,4 +80,41 @@ input[type=checkbox] {
 
 .sidebar{
   color: var(--d-gray-drk);
+}
+
+/* CODE MIRROR */
+.contenedor-editores{
+  overflow: auto;
+  height: 84%;
+}
+
+.cm-altura{
+  height: 115px;
+  overflow: overlay;
+  resize: vertical;
+  max-height: 300px;
+}
+/* fIN CODE MIRROR */
+
+/* frames/bloques */
+.seleccionado{
+  border: 2px dashed var(--pink);
+}
+
+.vacio{
+  border:1px solid gray;
+}
+
+.pantalla{
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: -webkit-fill-available;
+  position: absolute;
+  width: -webkit-fill-available;
+}
+
+.iframe{
+  height: 700px;
+  border: 1px solid gray;
 }

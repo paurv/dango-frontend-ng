@@ -29,6 +29,9 @@ import { PlanesComponent } from './components/admin/planes/planes.component';
 import { TemasComponent } from './components/admin/temas/temas.component';
 import { UsuariosComponent } from './components/admin/usuarios/usuarios.component';
 
+// codemirror
+import { FormsModule } from '@angular/forms';
+import { CodemirrorModule } from '@ctrl/ngx-codemirror';
 
 @NgModule({
   declarations: [
@@ -50,7 +53,9 @@ import { UsuariosComponent } from './components/admin/usuarios/usuarios.componen
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot( ROUTES )
+    FormsModule,
+    CodemirrorModule,
+    RouterModule.forRoot( ROUTES ),
   ],
   providers: [],
   bootstrap: [AppComponent]
