@@ -1,5 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
-/* ESTE ES EL ESTILO DE TODO EL DASHBOARD */
+/* codemirror */
+@import '~codemirror/lib/codemirror';
+@import '~codemirror/theme/dracula';
+
 :root{
     /* --main-color: #6555DF;
     --d-pink: #FA71A5;
