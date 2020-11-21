@@ -8,6 +8,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 // Rutas Hijas
 import { COMPANIES_ROUTES } from './components/dash-empresa/companies.routes';
 import { ADMIN_ROUTES } from './components/admin/admin.routes';
+import { LoginComponent } from './components/login/login.component';
+import { SigninComponent } from './components/signin/signin.component';
 
 
 export const ROUTES: Routes = [
@@ -22,6 +24,8 @@ export const ROUTES: Routes = [
         children: ADMIN_ROUTES
     },
     { path: 'not-found', component: NotFoundComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'sign-in', component: SigninComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'not-found' },
 ];
 

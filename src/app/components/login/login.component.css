@@ -1,0 +1,52 @@
+.dg-titulos{
+    color: var(--main-color);
+    font-weight: 800;
+}
+
+.sidebar-login{
+    /* width: 100%; */
+    background: url(../../../assets/img/formas.svg),linear-gradient(45deg, rgba(156,143,255,1) 0%, rgba(136,122,243,1) 23%, rgba(122,107,235,1) 44%, rgba(101,85,223,1) 100%);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: bottom right, left, right;
+}
+
+.login-contenido{
+    height: 100vh;
+}
+
+.login-sidebar{
+    background-color: transparent;
+    padding: 40px;
+    border-radius: 12px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.jb-color{
+    background-color: transparent !important;
+}
+
+.sidebar-tile{
+    font-weight:700;
+}
+
+.login-form{
+    background-color: white; 
+    /* padding: 50px 130px 50px 130px;  */
+    border-radius: 12px;
+}
+
+.login-form-lablel{
+    font-weight: 500;
+    color: gray;
+}
+
+.form-padding{
+    padding: 5px 85px 5px 85px;
+}
+
+.animated {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
