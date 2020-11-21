@@ -2,6 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
+#
+
+# Dango-frontend-ng
+Es la parte de frontend del proyecto Dango, un SAAS destinado para comercio electronico, donde un usuario puede registrarse para comprar o crear su propia empresa.
+
+## Preview
+
+
+#
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
