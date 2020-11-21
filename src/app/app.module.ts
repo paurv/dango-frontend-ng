@@ -32,6 +32,8 @@ import { UsuariosComponent } from './components/admin/usuarios/usuarios.componen
 // codemirror
 import { FormsModule } from '@angular/forms';
 import { CodemirrorModule } from '@ctrl/ngx-codemirror';
+import { LoginComponent } from './components/login/login.component';
+import { SigninComponent } from './components/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { CodemirrorModule } from '@ctrl/ngx-codemirror';
     AdminComponent,
     PlanesComponent,
     TemasComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    LoginComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
