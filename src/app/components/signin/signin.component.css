@@ -54,3 +54,22 @@ input[type='radio']:checked:before{
   animation-duration: 0.5s;
   animation-fill-mode: both;
 } */
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #bebebe;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #bebebe;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #bebebe;
+}
+
+.required-field{
+    /* border: 1px var(--main-color) solid; */
+    /* color: var(--main-color); */
+    color: red;
+}

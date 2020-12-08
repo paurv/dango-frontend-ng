@@ -35,6 +35,8 @@ import { CodemirrorModule } from '@ctrl/ngx-codemirror';
 import { LoginComponent } from './components/login/login.component';
 import { SigninComponent } from './components/signin/signin.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +61,8 @@ import { SigninComponent } from './components/signin/signin.component';
     BrowserModule,
     FormsModule,
     CodemirrorModule,
-    RouterModule.forRoot( ROUTES ),
+    RouterModule.forRoot(ROUTES, { relativeLinkResolution: 'legacy' }),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
