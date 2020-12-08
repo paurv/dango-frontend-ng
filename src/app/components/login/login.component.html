@@ -8,7 +8,7 @@
                     <div class="row d-flex justify-content-center">
                         <img src="./assets/img/Logo_principal.svg" alt="">
                     </div>
-                    <form class="form-padding">
+                    <form (ngSubmit)="onLogin(loginForm)" #loginForm="ngForm" class="form-padding" >
                         <div class="col-12 d-flex justify-content-center mb-4">
                             <h2 class="text-center dg-titulos">
                                 Ingresa a Dango
@@ -16,21 +16,27 @@
                         </div>
                         <div class="form-group row mb-4">
                             <div class="col-sm-12">
-                                <input type="text" class="form-control" placeholder="email">
+                                <input type="text" class="form-control" placeholder="email" name="email" minlength="2" required email [(ngModel)]="user.email">
+                                <span class="required-field animated fadeIn" *ngIf="loginForm.submitted && loginForm.controls.email.errors || failedReq">
+                                    {{mensajeEmail}}
+                                </span>
                             </div>
                         </div>
                         <div class="form-group row mb-4">
                             <div class="col-sm-12">
-                                <input type="password" class="form-control" placeholder="password">
+                                <input type="password" class="form-control" placeholder="password" name="password" minlength="6" required [(ngModel)]="user.password">
+                                <span class="required-field animated fadeIn" *ngIf="loginForm.submitted && loginForm.controls.password.errors">
+                                    Ingrese una clave valida.
+                                </span>
                             </div>
                         </div>
                         <div class="form-group row mb-4 d-flex justify-content-center">
                             ¿No eres miembro? &nbsp;
-                            <a routerLink="/sign-in">Registrate</a>
+                            <a style="color: var(--main-color);" routerLink="/sign-in">Registrate</a>
                         </div>
                         <div class="col-12 d-flex justify-content-center">
                             <!-- <button type="submit" class="btn dg-btn-primero m-2">INGRESAR</button> -->
-                            <a href="../Dashboard-admin/index.html" class="btn dg-btn-primero m-2">INGRESAR</a>
+                            <button type="submit" href="" class="btn dg-btn-primero m-2" >INGRESAR</button>
                         </div>
                     </form>
                 </div>

@@ -269,3 +269,19 @@ body {
   .fadeInRight {
     animation-name: fadeInRight;
   }
+
+  .fadeIn {
+    animation-name: fadeIn;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 0, -100%);
+    }
+  
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
