@@ -34,8 +34,8 @@ export class PaginasComponent implements OnInit {
     'nombre': 'Romance',
     'descripcion': 'praesent blandit nam nulla integer'
   }];
-
   pagsArr: any[] = [];                           // arreglo temporal para mostrar datos de busqueda
+  pagsModal: boolean;
 
   constructor( public ubicPagina: Router) {
     // console.log(ubicPagina.url);

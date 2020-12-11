@@ -13,7 +13,7 @@ export class AuthService {
   url = environment.urlServer;
   userToken: string;
 
-  constructor( private httpClient: HttpClient ) { 
+  constructor( private httpClient: HttpClient ) {
     this.readToken();
   }
 
@@ -30,9 +30,9 @@ export class AuthService {
   login( data: any ): Observable<any> {
     return this.httpClient.post(`${this.url}/auth/login`, data )
           .pipe(
-            map( resp => {  // no se dispara en error
+            map( resp => {                                        // no se dispara en error
               console.log('entro en mapa rxjs');
-              this.saveToken( resp['token'] );
+              this.saveToken( resp['token'] );                    // tslint:disable-line
               return resp;
             })
           );

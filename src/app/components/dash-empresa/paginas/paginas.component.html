@@ -5,7 +5,7 @@
         <div class="row d-flex justify-content-end">
             <div class="d-flex justify-content-end col-sm-12 col-md-8">
                 <button type="button" class="btn dg-btn-primero mb-2" data-toggle="modal"
-                    data-target="#exampleModal">Agregar Pagina</button>
+                    data-target="#paginasModal" (click)="pagsModal = true">Agregar Pagina</button>
             </div>
             <div class="row col-sm-12 col-md-4">
                 <input type="text" class="form-control" placeholder="Buscar Pagina"
@@ -39,13 +39,14 @@
                                         data-placement="top" title="Elliminar">
                                         <i class="far fa-trash-alt"></i>
                                     </button>
-                                    <a [routerLink]="['sitio-config']" type="button" class="btn dg-btn-edit mr-2"
-                                        data-toggle="tooltip" data-placement="top" title="Cambiar Nombre">
-                                        <i class="fas fa-pen"></i></a>
-                                    <button type="button" class="btn dg-btn-config" data-toggle="tooltip"
+                                    <button type="button" class="btn dg-btn-edit mr-2"
+                                        data-toggle="tooltip" data-placement="top" title="Cambiar Nombre"
+                                        data-toggle="modal" data-target="#paginasModal" (click)="pagsModal = false">
+                                        <i class="fas fa-pen"></i></button>
+                                    <a [routerLink]="['sitio-config']" type="button" class="btn dg-btn-config" data-toggle="tooltip"
                                         data-placement="top" title="Editar Pagina">
                                         <i class="fas fa-code"></i>
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -84,17 +85,30 @@
     </div>
 </div>
 <!-- Modal - agregar pagina -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="paginasModal" tabindex="-1" role="dialog" aria-labelledby="paginasModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title font-weight-bold dg-title-color" id="exampleModalLabel">Agregar Pagina</h5>
+                <h5 class="modal-title font-weight-bold dg-title-color" id="paginasModalLabel" *ngIf="pagsModal">Agregar Pagina</h5>
+                <h5 class="modal-title font-weight-bold dg-title-color" id="paginasModalLabel" *ngIf="!pagsModal">Editar Pagina</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <!-- agregar pagina -->
+            <div class="modal-body" *ngIf="pagsModal">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Nombre de Pagina">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Descripcion de Pagina">
+                    </div>
+                </form>
+            </div>
+            <!-- editar pagina -->
+            <div class="modal-body" *ngIf="!pagsModal">
                 <form>
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Nombre de Pagina">

@@ -68,8 +68,17 @@ input[type='radio']:checked:before{
   color: #bebebe;
 }
 
-.required-field{
-    /* border: 1px var(--main-color) solid; */
+.required-field {
     /* color: var(--main-color); */
     color: red;
+}
+
+.cheked {
+    border-top: 3px solid var(--main-color);
+    color: var(--main-color);
+}
+
+.uncheked {
+    border-top: 3px solid lightgray;
+    color: lightgray;
 }
