@@ -29,6 +29,9 @@ import { PlanesComponent } from './components/admin/planes/planes.component';
 import { TemasComponent } from './components/admin/temas/temas.component';
 import { UsuariosComponent } from './components/admin/usuarios/usuarios.component';
 
+// cliente
+import { CompaniesComponent } from './components/client/companies/companies.component';
+
 // codemirror
 import { FormsModule } from '@angular/forms';
 import { CodemirrorModule } from '@ctrl/ngx-codemirror';
@@ -55,7 +58,8 @@ import { HttpClientModule } from '@angular/common/http';
     TemasComponent,
     UsuariosComponent,
     LoginComponent,
-    SigninComponent
+    SigninComponent,
+    CompaniesComponent
   ],
   imports: [
     BrowserModule,

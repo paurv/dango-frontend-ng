@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { StoresService } from '../../../services/stores.service';
+import { UsersService } from '../../../services/users.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,11 +10,26 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor( public routerLocation: Router) { }
+  pageName = 'Configuracion de pagina';
 
-  ngOnInit(): void { }
+  constructor( public routerLocation: Router,
+               private usersService: UsersService,
+               private storesService: StoresService ) { }
 
-  regresar(){
+  currentUser: any = {};
+  ngOnInit(): void {
+    console.log('nombre pag: ', this.pageName);
+    this.usersService.getCurrentUser( localStorage.getItem('token') )
+    .subscribe( resp => {
+      // console.log(resp);
+      this.currentUser = resp.user;
+    }, err => {
+      console.log(err);
+    });
+    this.pageName = this.storesService.pageName;
+  }
+
+  regresar(): void{
     this.routerLocation.navigate(['/admin-companies/paginas/']);
   }
 }

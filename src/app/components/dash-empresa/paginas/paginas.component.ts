@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { StoresService } from '../../../services/stores.service';
 
 @Component({
   selector: 'app-paginas',
@@ -34,23 +36,66 @@ export class PaginasComponent implements OnInit {
     'nombre': 'Romance',
     'descripcion': 'praesent blandit nam nulla integer'
   }];
-
   pagsArr: any[] = [];                           // arreglo temporal para mostrar datos de busqueda
+  pagsModal: boolean;
+  storeItem: any;
+  pages: any[] = [];
+  idStore: string;
 
-  constructor( public ubicPagina: Router) {
-    // console.log(ubicPagina.url);
-    // /admin-companies/paginas/sitio-config
-  }
+  newPageData: any = {};
+
+  constructor( public ubicPagina: Router,
+               private storeService: StoresService ) { }
 
   ngOnInit(): void {
-  }
+    this.storeService.getUserStore( localStorage.getItem('token') )
+        .subscribe( resp => {
+          console.log(resp);
+          this.idStore = resp.storeUser._id;
+          this.pages = resp.storeUser.pages;
+        }, err => {
+          console.log(err);
+        });
+   }
 
-  buscarPagina(termino: string) {
-    // console.log(termino);
+   newPage( form: NgForm ): void{
+    if ( form.invalid ) {
+      return;
+    }
+    console.log(form);
+    const data = {
+      pageUrl: this.newPageData.pageUrl,
+      pageName: this.newPageData.pageName,
+      mainPage: false,
+      description: this.newPageData.description
+    };
+    console.log(data);
+    this.storeService.createPage( this.idStore, localStorage.getItem('token'), data)
+        .subscribe( resp => {
+          console.log( resp );
+          this.newPageData = {};
+          this.pages = resp.newPage.pages;
+        }, err => {
+          console.log( err );
+        });
+   }
+
+   deletePage( idpage ): void {
+     console.log(`Pagina: ${idpage}, tienda: ${this.idStore}`);
+     this.storeService.deletePage( this.idStore, localStorage.getItem('token'), idpage)
+         .subscribe( resp => {
+           console.log(resp);
+           this.pages = resp.newPageArray;
+         }, err => {
+           console.log(err);
+         });
+   }
+
+  buscarPagina(termino: string) {                // tslint:disable-line
     this.pagsArr = [];
     termino = termino.toLowerCase();
-    for (let paginas of this.paginasEj) {
-      let nombre = paginas.nombre.toLowerCase();
+    for (const paginas of this.pages) {
+      const nombre = paginas.nombre.toLowerCase();
       if (nombre.indexOf(termino) >= 0) {
         this.pagsArr.push(paginas);
       }
@@ -58,4 +103,9 @@ export class PaginasComponent implements OnInit {
     return this.pagsArr;
   }
 
+  sendPageId( pageId, name ){
+    this.storeService.page = pageId;
+    this.storeService.pageName = name;
+    console.log( this.storeService.pageName );
+  }
 }

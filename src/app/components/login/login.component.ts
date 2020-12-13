@@ -1,8 +1,11 @@
 import { invalid } from '@angular/compiler/src/render3/view/util';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import Swal from 'sweetalert2';
 import { userModel } from '../../models/user.model';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
+import { StoresService } from '../../services/stores.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +18,9 @@ export class LoginComponent implements OnInit {
   mensajeEmail = 'Campo requerido';
   failedReq = false;
 
-  constructor( private authService: AuthService ) {
+  constructor( private authService: AuthService,
+               private router: Router,
+               private storesService: StoresService ) {
     this.user = new userModel();
   }
 
@@ -30,14 +35,27 @@ export class LoginComponent implements OnInit {
       console.log(form);
       return;
     }
-    console.log('user: ', this.user);
+    Swal.fire({
+      allowOutsideClick: false,
+      text: 'Espere un momento...'
+    });
+    Swal.showLoading();
+    // console.log('user: ', this.user);
 
     this.authService.login( this.user )
         .subscribe( res => {
           console.log( res );
+          Swal.close();
+
+          if ( res.user.role === 'Empresa' ) {
+            this.router.navigateByUrl('/admin-companies');
+          } else if ( res.user.role === 'Admin' ) {
+            this.router.navigateByUrl('/admin');
+          }
         }, err => {
+          Swal.close();
           this.failedReq = true;
-          this.mensajeEmail = 'Usuario o contraseña invalido';
+          this.mensajeEmail = err.error.message;
           console.log( err );
         });
   }
