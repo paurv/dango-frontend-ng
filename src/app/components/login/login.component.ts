@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import { userModel } from '../../models/user.model';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { StoresService } from '../../services/stores.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit {
   failedReq = false;
 
   constructor( private authService: AuthService,
-               private router: Router ) {
+               private router: Router,
+               private storesService: StoresService ) {
     this.user = new userModel();
   }
 
@@ -38,13 +40,13 @@ export class LoginComponent implements OnInit {
       text: 'Espere un momento...'
     });
     Swal.showLoading();
-    console.log('user: ', this.user);
+    // console.log('user: ', this.user);
 
     this.authService.login( this.user )
         .subscribe( res => {
           console.log( res );
-          console.log( 'User role: ', res.user.role );
           Swal.close();
+
           if ( res.user.role === 'Empresa' ) {
             this.router.navigateByUrl('/admin-companies');
           } else if ( res.user.role === 'Admin' ) {

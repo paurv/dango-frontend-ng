@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
+import { StoresService } from '../../../services/stores.service';
 
 @Component({
   selector: 'app-sitio-config',
@@ -22,9 +24,88 @@ export class SitioConfigComponent implements OnInit {
   contArrDiv: number;             // id de segmento de bloque seleccionado
   codeMirrorXml: string;
 
-  constructor() { }
+  storeId: string;
+  pageId: string;
+  auth: any;
 
-  ngOnInit(): void { }
+  constructor( private storesService: StoresService ) { }
+
+  ngOnInit(): void {
+    this.pageId = this.storesService.page;
+
+    this.auth = localStorage.getItem('token');
+    this.storesService.getUserStore(this.auth)
+    .subscribe( res => {
+      console.log(res);
+      this.storeId = res.storeUser._id;
+      console.log(this.storeId);
+    }, err => {
+      console.log(err);
+    });
+   }
+
+  guardarContenido(): void{
+    const data = {
+      js: this.jsCode,
+      css: this.cssCode,
+      htmlBlocks: this.arregloHtml
+     };
+    console.log(data);
+    this.storesService.addCode( this.auth, this.storeId, this.pageId, data )
+        .subscribe( resp => {
+          console.log(resp);
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Your work has been saved',
+            showConfirmButton: false,
+            timer: 1300
+          });
+        }, err => {
+          console.log(err);
+        });
+
+    // let tempHtml = '';
+    // tempHtml +=
+    // this.arregloHtml.forEach( html => {
+    //   switch ( html.tipo ) {
+    //     case 1 : {
+    //       for ( const content of html.contenido ) {
+    //         tempHtml += `<div class="row"><div class="col-12">`;
+    //         tempHtml += content.htmlObj;
+    //         tempHtml += `</div></div>`;
+    //       }
+    //       break;
+    //     }
+    //     case 2 : {
+    //       for ( let i = 0; i < html.contenido.length; i++ ) {
+    //         if ( i === 0) { tempHtml += `<div class="row">`; }
+    //         tempHtml += `<div class="col-6">`;
+    //         tempHtml += html.contenido[i].htmlObj;
+    //         // console.log('contenido i: ', html.contenido[i].htmlObj);
+    //         tempHtml += `</div>`;
+    //         if ( i === (html.contenido.length - 1)) { tempHtml += `</div>`; }
+    //       }
+    //       break;
+    //     }
+    //     case 3 : {
+    //       for ( let i = 0; i < html.contenido.length; i++ ) {
+    //         if ( i === 0) { tempHtml += `<div class="row">`; }
+    //         tempHtml += `<div class="col-4">`;
+    //         tempHtml += html.contenido[i].htmlObj;
+    //         tempHtml += `</div>`;
+    //         if ( i === (html.contenido.length - 1)) { tempHtml += `</div>`; }
+    //       }
+    //       break;
+    //     }
+    //   }
+    //   console.log(tempHtml);
+    // });
+  }
+
+
+
+  // logica de la cofiguracion =================>>>>
 
   contenidoCodigo(contHtml, contCss: any = '<style></style>', contJs?): void {
     this.htmlCode = contHtml.value;
@@ -33,13 +114,17 @@ export class SitioConfigComponent implements OnInit {
 
     if (this.frame !== undefined) {
       const output: any = this.frame;
-      output.contentDocument.body.innerHTML = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">';
+      output.contentDocument.body.innerHTML = "<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css'>";
       output.contentDocument.body.innerHTML += this.htmlCode + this.cssCode;
       output.contentDocument.body.innnerHTML += `<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
                                                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>`;
       output.contentWindow.eval(this.jsCode);
       this.frame.className = '';
       this.arregloHtml[this.idArrDiv].contenido[this.contArrDiv].htmlObj = contHtml.value;
+
+      console.log('html', this.arregloHtml);
+      console.log('css', this.cssCode);
+      console.log('js', this.jsCode);
     }
   }
 

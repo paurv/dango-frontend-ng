@@ -5,6 +5,7 @@
             <h4 class="mr-2 ml-3 tile-primero mt-auto mb-auto">Contenido</h4>
             <button type="button" class="btn dg-btn-delete" aria-labelledby="ejecutar"
                 (click)="contenidoCodigo(cmXml, cmCss, cmJs)"><i class="fas fa-terminal"></i>&nbsp; Ejecutar</button>
+                <button type="button" class="btn dg-btn-primero ml-2" (click)="guardarContenido()"><i class="fas fa-save"></i>&nbsp; Guardar</button>
             <div class="container">
             </div>
         </div>
@@ -72,7 +73,7 @@
                 <div class="col-12 p-0" (click)="selector('cuadro-'+cuadros.id +'-'+ cuadros.contenido[0].orden)"
                     *ngIf="cuadros.tipo === 1">
                     <iframe id="cuadro-{{cuadros.id}}-{{cuadros.contenido[0].orden}}"
-                        style="width: -webkit-fill-available; height: -webkit-fill-available;"></iframe>
+                        style="width: -webkit-fill-available; height: 500px;"></iframe>
                     <div class="pantalla"></div>
                 </div>
             </div>
@@ -80,13 +81,13 @@
                 <div class="col-6 p-0" (click)="selector('cuadro-'+cuadros.id +'-'+ cuadros.contenido[0].orden)"
                     *ngIf="cuadros.contenido[0]">
                     <iframe id="cuadro-{{cuadros.id}}-{{cuadros.contenido[0].orden}}"
-                        style="width: -webkit-fill-available; height: -webkit-fill-available;"></iframe>
+                        style="width: -webkit-fill-available; height: 500px;"></iframe>
                     <div class="pantalla"></div>
                 </div>
                 <div class="col-6 p-0" (click)="selector('cuadro-'+cuadros.id +'-'+ cuadros.contenido[1].orden)"
                     *ngIf="cuadros.contenido[1]">
                     <iframe id="cuadro-{{cuadros.id}}-{{cuadros.contenido[1].orden}}"
-                        style="width: -webkit-fill-available; height: -webkit-fill-available;"></iframe>
+                        style="width: -webkit-fill-available; height: 500px;"></iframe>
                     <div class="pantalla"></div>
                 </div>
             </div>
@@ -94,19 +95,19 @@
                 <div class="col-4 p-0" (click)="selector('cuadro-'+cuadros.id +'-'+ cuadros.contenido[0].orden)"
                     *ngIf="cuadros.contenido[0]">
                     <iframe id="cuadro-{{cuadros.id}}-{{cuadros.contenido[0].orden}}"
-                        style="width: -webkit-fill-available; height: -webkit-fill-available;"></iframe>
+                        style="width: -webkit-fill-available; height: 500px;"></iframe>
                     <div class="pantalla"></div>
                 </div>
                 <div class="col-4 p-0" (click)="selector('cuadro-'+cuadros.id +'-'+ cuadros.contenido[1].orden)"
                     *ngIf="cuadros.contenido[1]">
                     <iframe id="cuadro-{{cuadros.id}}-{{cuadros.contenido[1].orden}}"
-                        style="width: -webkit-fill-available; height: -webkit-fill-available;"></iframe>
+                        style="width: -webkit-fill-available; height: 500px;"></iframe>
                     <div class="pantalla"></div>
                 </div>
                 <div class="col-4 p-0" (click)="selector('cuadro-'+cuadros.id +'-'+ cuadros.contenido[2].orden)"
                     *ngIf="cuadros.contenido[2]">
                     <iframe id="cuadro-{{cuadros.id}}-{{cuadros.contenido[2].orden}}"
-                        style="width: -webkit-fill-available; height: -webkit-fill-available;"></iframe>
+                        style="width: -webkit-fill-available; height: 500px;"></iframe>
                     <div class="pantalla"></div>
                 </div>
             </div>

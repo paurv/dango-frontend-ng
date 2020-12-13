@@ -17,27 +17,37 @@ export class AuthService {
     this.readToken();
   }
 
-  // verUrl(): void {
-  //   console.log(this.url);
-  // }
+  verUrl(): void {
+    console.log(this.url);
+  }
 
   // create new user
   signIn( data: userModel ): Observable<any> {
-    console.log( data );
-    return this.httpClient.post(`${this.url}/auth/register`, data);
+    return this.httpClient.post(`${this.url}/auth/register`, data)
+          .pipe(
+            map( resp => {
+              console.log('entro en para de signIn');
+              this.saveToken(resp['token']);
+              return resp;
+            })
+          );
   }
 
   login( data: any ): Observable<any> {
     return this.httpClient.post(`${this.url}/auth/login`, data )
           .pipe(
             map( resp => {                                        // no se dispara en error
-              console.log('entro en mapa rxjs');
               this.saveToken( resp['token'] );                    // tslint:disable-line
               return resp;
             })
           );
   }
 
+  checkEmail( data: any ): Observable<any> {
+    return this.httpClient.put(`${this.url}/auth/`, data);
+  }
+
+  // falta
   logOut(): Observable<any> {
     return this.httpClient.get('', {});
   }

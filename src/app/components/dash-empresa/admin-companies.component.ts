@@ -1,11 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { UsersService } from '../../services/users.service';
+import { NavbarComponent } from '../shared/navbar/navbar.component';
+import { StoresService } from '../../services/stores.service';
 
 
 @Component({
   selector: 'app-admin-companies',
   template: `
-              <app-navbar></app-navbar>
+              <app-navbar #navbarComponent></app-navbar>
               <div class="container-fluid" style="margin-top: 36px;" *ngIf="routerLocation.url != '/admin-companies/paginas/sitio-config'">
                 <div class="row">
                   <div class="col-sm-5 col-md-3 col-lg-2 d-md-block pl-0 pr-0">
@@ -24,9 +27,13 @@ import { Router } from '@angular/router';
 })
 export class AdminCompaniesComponent implements OnInit {
 
-  constructor( public routerLocation: Router) { }
+  token: string;
+  currentUser = {};
+  storeItem: any = {};
+  constructor( public routerLocation: Router,
+               private usersService: UsersService,
+               private storesService: StoresService ) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }

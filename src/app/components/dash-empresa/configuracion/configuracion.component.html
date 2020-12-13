@@ -1,13 +1,4 @@
 <div class="content">
-    <!-- DIV BOTONES SUPERIORES -->
-    <!-- <div class="container">
-        <div class="row d-flex justify-content-end">
-            <div class="d-flex justify-content-end col-sm-12 col-md-8">
-                <a [routerLink]="['/sitio-config']" class="btn dg-btn-primero" role="button"><i
-                        class="fas fa-external-link-alt"></i>&nbsp; Configurar Sitio</a>
-            </div>
-        </div>
-    </div> -->
     <!-- CONTENIDO  -->
     <div class="container mt-5">
         <!-- formulario card-sitio -->
@@ -18,7 +9,7 @@
                     <label class="col-sm-2 col-form-label">Titulo</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" placeholder="Titulo del sitio Web"
-                            [readonly]="soloLectura">
+                            [readonly]="soloLectura" name="titulo" [ngModel]="siteConfig?.name" (ngModelChange)="siteConfig.name = $event">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -32,7 +23,7 @@
                     <label class="col-sm-2 col-form-label">Palabras Clave</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" placeholder="palabra1, palabra2, palabra3, palabra4"
-                            [readonly]="soloLectura">
+                            [readonly]="soloLectura" name="keywords" [ngModel]="siteConfigKeywords">
                     </div>
                 </div>
                 <div class="form-row">
@@ -76,14 +67,14 @@
                     <label class="col-sm-2 col-form-label">Titulo</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" placeholder="Titulo de header"
-                            [readonly]="soloLecturaHeader">
+                            [readonly]="soloLecturaHeader" name="headerTitle" [ngModel]="siteConfig.header?.title" (ngModelChange)="siteConfig.header.title = $event">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Subtitulo</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" placeholder="Subtitulo..."
-                            [readonly]="soloLecturaHeader">
+                            [readonly]="soloLecturaHeader" name="subTitle" [ngModel]="siteConfig.header?.subtitle" (ngModelChange)="siteConfig.header.subtitle = $event">
                     </div>
                 </div>
                 <div class="form-group row" style="width: 101%;">
@@ -114,13 +105,14 @@
                     <label class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" placeholder="miemail@mail.com"
-                            [readonly]="soloLecturaFooter">
+                            [readonly]="soloLecturaFooter" name="footerEmail" [ngModel]="siteConfig.footer?.email" (ngModelChange)="siteConfig.header.email = $event">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Telefono</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="9999 9999" [readonly]="soloLecturaFooter">
+                        <input type="text" class="form-control" placeholder="9999 9999" 
+                            [readonly]="soloLecturaFooter" name="footerTel" [ngModel]="siteConfig.footer?.tel" (ngModelChange)="siteConfig.footer.tel = $event">
                     </div>
                 </div>
                 <div class="form-group row mt-5">
