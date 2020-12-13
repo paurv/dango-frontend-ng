@@ -9,7 +9,10 @@ export class CompaniesComponent implements OnInit {
 
   constructor() { }
 
+  hello: string;
   ngOnInit(): void {
+    this.hello = 'hello world'; 
+    console.log('hello world');
   }
 
 }

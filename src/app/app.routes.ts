@@ -10,11 +10,12 @@ import { COMPANIES_ROUTES } from './components/dash-empresa/companies.routes';
 import { ADMIN_ROUTES } from './components/admin/admin.routes';
 import { LoginComponent } from './components/login/login.component';
 import { SigninComponent } from './components/signin/signin.component';
+import { CompaniesComponent } from './components/client/companies/companies.component';
 
 
 export const ROUTES: Routes = [
     {
-        path: 'admin-companies',
+        path: 'admin-companies/:idStore',
         component: AdminCompaniesComponent,
         children: COMPANIES_ROUTES
     },
@@ -26,6 +27,7 @@ export const ROUTES: Routes = [
     { path: 'not-found', component: NotFoundComponent },
     { path: 'login', component: LoginComponent },
     { path: 'sign-in', component: SigninComponent },
+    { path: 'companies', component: CompaniesComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'not-found' },
 ];
 

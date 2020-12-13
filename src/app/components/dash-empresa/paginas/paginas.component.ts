@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { StoresService } from '../../../services/stores.service';
 
 @Component({
@@ -81,14 +82,26 @@ export class PaginasComponent implements OnInit {
    }
 
    deletePage( idpage ): void {
-     console.log(`Pagina: ${idpage}, tienda: ${this.idStore}`);
-     this.storeService.deletePage( this.idStore, localStorage.getItem('token'), idpage)
-         .subscribe( resp => {
-           console.log(resp);
-           this.pages = resp.newPageArray;
-         }, err => {
-           console.log(err);
-         });
+
+    Swal.fire({
+      title: '¿Seguro que quieres borrar?',
+      showConfirmButton: false,
+      showDenyButton: true,
+      showCancelButton: true,
+      denyButtonText: `Borrar`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isDenied) {
+        this.storeService.deletePage( this.idStore, localStorage.getItem('token'), idpage)
+        .subscribe( resp => {
+          console.log(resp);
+          Swal.fire('Pagina Eliminada', '', 'success');
+          this.pages = resp.newPageArray;
+        }, err => {
+          console.log(err);
+        });
+      }
+    });
    }
 
   buscarPagina(termino: string) {                // tslint:disable-line

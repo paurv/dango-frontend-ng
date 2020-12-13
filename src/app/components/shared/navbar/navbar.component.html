@@ -1,10 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="height: 60px;"
-    *ngIf="!(routerLocation.url === '/admin-companies/paginas/sitio-config')">
+    *ngIf="!(routerLocation.url.includes('sitio-config'))">
     <div class="col-8">
         <div class="row">
             <img src="assets/img/nav-logo.svg" class="img-fluid img-spc" alt="Dango" style="width: 150px;">
+            <!-- routerLocation.url | transRuta -->
             <h4 class="d-none d-sm-none d-md-none d-lg-block dash-titulo"
-                style="margin-left: 38px; margin-top: auto; margin-bottom: auto;"> {{routerLocation.url | transRuta}}
+                style="margin-left: 38px; margin-top: auto; margin-bottom: auto;"> {{ companyName }}
             </h4>
         </div>
     </div>
@@ -32,7 +33,7 @@
 </nav>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
-    *ngIf="routerLocation.url === '/admin-companies/paginas/sitio-config'">
+    *ngIf="routerLocation.url.includes('sitio-config')">
     <div class="col-8">
         <div class="row">
             <img src="assets/img/nav-logo.svg" class="img-fluid" alt="Dango" style="width: 150px;">
