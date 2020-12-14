@@ -1,5 +1,5 @@
 # Dango for SAAS
-![alt text] (https://github.com/paurv/dango-frontend-ng/blob/master/src/assets/img/landing.png?raw=true)
+![landingpage](https://github.com/paurv/dango-frontend-ng/blob/master/src/assets/img/landing.png?raw=true)
 
 #
 
