@@ -9,7 +9,7 @@ import { StoresService } from '../../services/stores.service';
   selector: 'app-admin-companies',
   template: `
               <app-navbar #navbarComponent></app-navbar>
-              <div class="container-fluid" style="margin-top: 36px;" *ngIf="routerLocation.url != '/admin-companies/paginas/sitio-config'">
+              <div class="container-fluid" style="margin-top: 36px;" *ngIf="!routerLocation.url.includes('sitio-config')">
                 <div class="row">
                   <div class="col-sm-5 col-md-3 col-lg-2 d-md-block pl-0 pr-0">
                     <app-sidebar></app-sidebar>
@@ -19,7 +19,7 @@ import { StoresService } from '../../services/stores.service';
                   </div>
                 </div>
               </div>
-              <div class="container-fluid p-0" style="margin-top: 58px;" *ngIf="routerLocation.url === '/admin-companies/paginas/sitio-config'">
+              <div class="container-fluid p-0" style="margin-top: 58px;" *ngIf="routerLocation.url.includes('sitio-config')">
                 <app-sitio-config></app-sitio-config>
               </div>
             `,

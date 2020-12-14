@@ -30,38 +30,42 @@
                         </div>
                     </div>
                     <!-- primer form -->
-                    <form (ngSubmit)="onSubmitUser( singInForm )" class="animated fadeInRight" #singInForm="ngForm" *ngIf="!nextForm">
+                    <form (ngSubmit)="onSubmitUser( singInForm )" class="animated fadeInRight" #singInForm="ngForm"
+                        *ngIf="!nextForm">
                         <div class="col-12 d-flex justify-content-center mb-4">
                             <h2 class="text-center dg-titulos">
                                 Crear una Cuenta
                             </h2>
                         </div>
                         <div class="form-group row mb-3">
-                            <label
-                                class="col-sm-12 col-md-12 col-lg-2 col-form-label login-form-lablel">Nombre</label>
+                            <label class="col-sm-12 col-md-12 col-lg-2 col-form-label login-form-lablel">Nombre</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="name" [(ngModel)]="user.name" minlength="2" required placeholder="Nombre">
-                                <span class="required-field animated fadeIn" *ngIf="singInForm.submitted && singInForm.controls.name.errors">
+                                <input type="text" class="form-control" name="name" [(ngModel)]="user.name"
+                                    minlength="2" required placeholder="Nombre">
+                                <span class="required-field animated fadeIn"
+                                    *ngIf="singInForm.submitted && singInForm.controls.name.errors">
                                     Ingrese un nombre valido.
                                 </span>
                             </div>
                         </div>
                         <div class="form-group row mb-3">
-                            <label
-                                class="col-sm-12 col-md-12 col-lg-2 col-form-label login-form-lablel">Email</label>
+                            <label class="col-sm-12 col-md-12 col-lg-2 col-form-label login-form-lablel">Email</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" name="email" [(ngModel)]="user.email" required email placeholder="miemail@mail.com">
-                                <span class="required-field animated fadeIn" *ngIf="singInForm.submitted && singInForm.controls.email.errors || emailErr">
+                                <input type="email" class="form-control" name="email" [(ngModel)]="user.email" required
+                                    email placeholder="miemail@mail.com">
+                                <span class="required-field animated fadeIn"
+                                    *ngIf="singInForm.submitted && singInForm.controls.email.errors || emailErr">
                                     {{emailMessage}}
                                 </span>
                             </div>
                         </div>
                         <div class="form-group row mb-3">
-                            <label
-                                class="col-sm-12 col-md-12 col-lg-2 col-form-label login-form-lablel">Clave</label>
+                            <label class="col-sm-12 col-md-12 col-lg-2 col-form-label login-form-lablel">Clave</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" name="password" [(ngModel)]="user.password" minlength="6" required placeholder="miclave">
-                                <span class="required-field animated fadeIn" *ngIf="singInForm.submitted && singInForm.controls.password.errors">
+                                <input type="password" class="form-control" name="password" [(ngModel)]="user.password"
+                                    minlength="6" required placeholder="miclave">
+                                <span class="required-field animated fadeIn"
+                                    *ngIf="singInForm.submitted && singInForm.controls.password.errors">
                                     Ingrese una clave valida.
                                 </span>
                             </div>
@@ -70,21 +74,22 @@
                             <label class="col-sm-12 col-md-12 col-lg-2 col-form-label login-form-lablel">Confirmar
                                 Clave</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" placeholder="miclave" name="confirmPass" [(ngModel)]="confirmPass">
+                                <input type="password" class="form-control" placeholder="miclave" name="confirmPass"
+                                    [(ngModel)]="confirmPass">
                                 <span class="required-field animated fadeIn" *ngIf="singInForm.submitted && notMatch">
                                     La contraseña no coincide.
                                 </span>
                             </div>
                         </div>
                         <div class="form-group row mb-3">
-                            <label
-                                class="col-sm-12 col-md-12 col-lg-2 col-form-label login-form-lablel">Usuario</label>
+                            <label class="col-sm-12 col-md-12 col-lg-2 col-form-label login-form-lablel">Usuario</label>
                             <div class="col-sm-10">
                                 <select class="form-control" name="role" [(ngModel)]="user.role">
                                     <option [value]="role" *ngFor="let role of roles"> {{role}} </option>
                                     <!-- <option *ngFor="let obj of objPrueba" [ngValue]="obj" > {{obj.plan}} </option> -->
                                 </select>
-                                <span class="required-field animated fadeIn" *ngIf="singInForm.submitted && singInForm.controls.role.pristine">
+                                <span class="required-field animated fadeIn"
+                                    *ngIf="singInForm.submitted && singInForm.controls.role.pristine">
                                     Seleccione un plan.
                                 </span>
                             </div>
@@ -92,171 +97,182 @@
                         <div class="form-group form-check row" style="margin-left: 18%">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
                             <label class="form-check-label text-muted" for="exampleCheck1">Recordar usuario</label>
-                          </div>
+                        </div>
                         <div class="form-group row mb-4 d-flex justify-content-center">
                             ¿Ya tienes cuenta una cuenta? &nbsp;
                             <a style="color: var(--main-color);" routerLink="/login">Iniciar sesión</a>
                         </div>
                         <div class="col-12 d-flex justify-content-center">
-                            <button type="submit" class="btn dg-btn-primero m-2" (click)="signIn()">CREAR CUENTA</button>
+                            <button type="submit" class="btn dg-btn-primero m-2" (click)="signIn()">CREAR
+                                CUENTA</button>
                         </div>
                     </form>
 
                     <!-- segundo form -->
                     <!-- *ngIf="nextForm" -->
-                    <form (ngSubmit)="onSubmitCompany( singInFormComp )" class="animated fadeInRight" #singInFormComp="ngForm" *ngIf="nextForm">
+                    <form (ngSubmit)="onSubmitCompany( singInFormComp )" class="animated fadeInRight"
+                        #singInFormComp="ngForm" *ngIf="nextForm">
                         <div class="col-12 d-flex justify-content-center mb-4">
                             <h2 class="text-center dg-titulos">
                                 Detalle de pago
                             </h2>
                         </div>
-<div style="height: 500px; overflow-y: auto; overflow-x: hidden;">
-    <div class="form-group row mb-3">
-        <label
-            class="col-sm-12 col-md-12 col-lg-12 col-form-label login-form-lablel">Nombre Tienda</label>
-        <div class="col-sm-12">
-            <input type="text" class="form-control" minlength="4" name="storeName" [(ngModel)]="storeName" required placeholder="Mi Tienda">
-            <span class="required-field animated fadeIn" *ngIf="singInFormComp.submitted && singInFormComp.controls.storeName.errors">
-                Ingrese un nombre valido.
-            </span>
-        </div>
-    </div>
-    <div class="form-group row mb-3">
-        <label
-            class="col-sm-12 col-md-12 col-lg-12 col-form-label login-form-lablel">Url Tienda</label>
-        <div class="col-sm-12">
-            <input type="text" class="form-control" minlength="4" name="storeUrl" [(ngModel)]="storeUrl" required placeholder="mi-tienda-url">
-            <small id="emailHelp" class="form-text text-muted">La url no debe contener espacios.</small>
-            <span class="required-field animated fadeIn" *ngIf="singInFormComp.submitted && singInFormComp.controls.storeUrl.errors">
-                Ingrese url valida.
-            </span>
-        </div>
-    </div>
-    <div class="form-group row mb-3">
-        <label
-            class="col-sm-12 col-md-12 col-lg-12 col-form-label login-form-lablel">Plan</label>
-        <div class="col-sm-12">
+                        <div style="height: 500px; overflow-y: auto; overflow-x: hidden;">
+                            <div class="form-group row mb-3">
+                                <label class="col-sm-12 col-md-12 col-lg-12 col-form-label login-form-lablel">Nombre
+                                    Tienda</label>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" minlength="4" name="storeName"
+                                        [(ngModel)]="storeName" required placeholder="Mi Tienda">
+                                    <span class="required-field animated fadeIn"
+                                        *ngIf="singInFormComp.submitted && singInFormComp.controls.storeName.errors">
+                                        Ingrese un nombre valido.
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-3">
+                                <label class="col-sm-12 col-md-12 col-lg-12 col-form-label login-form-lablel">Url
+                                    Tienda</label>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" minlength="4" name="storeUrl"
+                                        [(ngModel)]="storeUrl" required placeholder="mi-tienda-url">
+                                    <small id="emailHelp" class="form-text text-muted">La url no debe contener
+                                        espacios.</small>
+                                    <span class="required-field animated fadeIn"
+                                        *ngIf="singInFormComp.submitted && singInFormComp.controls.storeUrl.errors">
+                                        Ingrese url valida.
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-3">
+                                <label
+                                    class="col-sm-12 col-md-12 col-lg-12 col-form-label login-form-lablel">Plan</label>
+                                <div class="col-sm-12">
 
-            <select class="form-control" name="plan" [(ngModel)]="user.plan" #planSelect (change)="setPlanSpecs( planSelect.value )">
-                <option [value]="plan._id" *ngFor="let plan of plans"> {{plan.name}} </option>
-            </select>
-            <!-- *ngIf="singInForm.submitted && singInForm.controls.role.pristine" -->
-            <span class="required-field animated fadeIn" *ngIf="singInFormComp.submitted && singInFormComp.controls.plan.pristine">
-                Ingrese un nombre valido.
-            </span>
+                                    <select class="form-control" name="plan" [(ngModel)]="user.plan" #planSelect
+                                        (change)="setPlanSpecs( planSelect.value )">
+                                        <option [value]="plan._id" *ngFor="let plan of plans"> {{plan.name}} </option>
+                                    </select>
+                                    <!-- *ngIf="singInForm.submitted && singInForm.controls.role.pristine" -->
+                                    <span class="required-field animated fadeIn"
+                                        *ngIf="singInFormComp.submitted && singInFormComp.controls.plan.pristine">
+                                        Ingrese un nombre valido.
+                                    </span>
 
-            <div class="row mt-4">
-                <div class="col">
-                    <div class="card border-secondary text-center p-3">
-                        <blockquote class="blockquote mb-0" style="color: gray; font-size: 16px;">
-                          Paginas: <span class="font-weight-bold" style="color: #6555df;"> {{planSpecs.pages}} </span> 
-                        </blockquote>
-                      </div>
-                </div>
-                <div class="col">
-                    <div class="card border-secondary text-center p-3">
-                        <blockquote class="blockquote mb-0" style="color: gray; font-size: 16px;">
-                          Temas: <span class="font-weight-bold" style="color: #6555df;"> {{planSpecs.themes}} </span> 
-                        </blockquote>
-                      </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="form-group row mb-3">
-        <label
-            class="col-sm-12 col-md-12 col-lg-12 col-form-label login-form-lablel">Nombre</label>
-        <div class="col-sm-12">
-            <input type="text" class="form-control" minlength="4" name="cardName" [(ngModel)]="creditCardIn.name" required placeholder="John Doe">
-            <span class="required-field animated fadeIn" *ngIf="singInFormComp.submitted && singInFormComp.controls.cardName.errors">
-                Ingrese un nombre valido.
-            </span>
-        </div>
-    </div>
-    <div class="form-group row mb-3">
-        <label
-            class="col-sm-12 col-md-12 col-lg-12 col-form-label login-form-lablel">Numero de tarjeta</label>
-        <div class="col-sm-12">
-            <input type="string" 
-                    class="form-control"
-                    placeholder="0000 0000 0000 0000" 
-                    #credit 
-                    (keyup)="creditCard(credit)"
-                    name="cardNumber"
-                    [(ngModel)]="creditCardIn.cardNumber" 
-                    required>
-            <span class="required-field animated fadeIn" *ngIf="singInFormComp.submitted && singInFormComp.controls.cardNumber.errors">
-                Llenar este campo
-            </span>
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group row mb-3 col-6">
-            <label
-                class="col-sm-12 col-md-12 col-lg-12 col-form-label login-form-lablel">CVV</label>
-            <div class="col-sm-12">
-                <input type="number" 
-                        class="form-control" 
-                        placeholder="000" 
-                        maxlength="3" 
-                        name="cvv" 
-                        [(ngModel)]="creditCardIn.cvv" 
-                        required>
-                <span class="required-field animated fadeIn" *ngIf="singInFormComp.submitted && singInFormComp.controls.cvv.errors">
-                    Ingrese su CVV.
-                </span>
-            </div>
-        </div>
-        <div class="form-group row mb-3 col-6">
-            <label class="col-sm-12 col-md-12 col-lg-12 col-form-label login-form-lablel">Exp. Date</label>
-            <div class="col-sm-5">
-                <select class="form-control" aria-placeholder="YY" name="expDate" [(ngModel)]="creditCardIn.expMonth">
-                    <option>01</option>
-                    <option>02</option>
-                    <option>03</option>
-                    <option>04</option>
-                    <option>05</option>
-                    <option>06</option>
-                    <option>07</option>
-                    <option>08</option>
-                    <option>09</option>
-                    <option>10</option>
-                    <option>11</option>
-                    <option>12</option>
-                </select>
-            </div>
-            <span style="font-size: 26px;">/</span>
-            <div class="col-sm-5">
-                <select class="form-control" aria-placeholder="YY" name="expYear" [(ngModel)]="creditCardIn.expYear">
-                  <option *ngFor="let year of years">{{year}}</option>
-                </select>
-            </div>
-            <span class="required-field ml-3 animated fadeIn" 
-                    *ngIf="singInFormComp.submitted && (singInFormComp.controls.expDate.pristine || singInFormComp.controls.expYear.pristine)">
-                Ingrese dia de expiracion.
-            </span>
-        </div>
-    </div>
-    <div class="form-group row mb-3">
-        <label
-            class="col-sm-12 col-md-12 col-lg-3 col-form-label login-form-lablel">Total a pagar: $</label>
-        <div class="col-sm-9">
-            <!-- <input type="number" class="form-control" style="background-color: white;" required placeholder="$ 100" readonly name="total" [(ngModel)]="planSpecs.price"> -->
-            <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text">$</div>
-                </div>
-                <input type="text" class="form-control" style="background-color: white;" placeholder="100" readonly name="total" [(ngModel)]="planSpecs.price">
-              </div>
-        </div>
-    </div>
-</div>
+                                    <div class="row mt-4">
+                                        <div class="col">
+                                            <div class="card border-secondary text-center p-3">
+                                                <blockquote class="blockquote mb-0"
+                                                    style="color: gray; font-size: 16px;">
+                                                    Paginas: <span class="font-weight-bold" style="color: #6555df;">
+                                                        {{planSpecs.pages}} </span>
+                                                </blockquote>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="card border-secondary text-center p-3">
+                                                <blockquote class="blockquote mb-0"
+                                                    style="color: gray; font-size: 16px;">
+                                                    Temas: <span class="font-weight-bold" style="color: #6555df;">
+                                                        {{planSpecs.themes}} </span>
+                                                </blockquote>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-3">
+                                <label
+                                    class="col-sm-12 col-md-12 col-lg-12 col-form-label login-form-lablel">Nombre</label>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" minlength="4" name="cardName"
+                                        [(ngModel)]="creditCardIn.name" required placeholder="John Doe">
+                                    <span class="required-field animated fadeIn"
+                                        *ngIf="singInFormComp.submitted && singInFormComp.controls.cardName.errors">
+                                        Ingrese un nombre valido.
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-3">
+                                <label class="col-sm-12 col-md-12 col-lg-12 col-form-label login-form-lablel">Numero de
+                                    tarjeta</label>
+                                <div class="col-sm-12">
+                                    <input type="string" class="form-control" placeholder="0000 0000 0000 0000" #credit
+                                        (keyup)="creditCard(credit)" name="cardNumber"
+                                        [(ngModel)]="creditCardIn.cardNumber" required>
+                                    <span class="required-field animated fadeIn"
+                                        *ngIf="singInFormComp.submitted && singInFormComp.controls.cardNumber.errors">
+                                        Llenar este campo
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group row mb-3 col-6">
+                                    <label
+                                        class="col-sm-12 col-md-12 col-lg-12 col-form-label login-form-lablel">CVV</label>
+                                    <div class="col-sm-12">
+                                        <input type="number" class="form-control" placeholder="000" maxlength="3"
+                                            name="cvv" [(ngModel)]="creditCardIn.cvv" required>
+                                        <span class="required-field animated fadeIn"
+                                            *ngIf="singInFormComp.submitted && singInFormComp.controls.cvv.errors">
+                                            Ingrese su CVV.
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-3 col-6">
+                                    <label class="col-sm-12 col-md-12 col-lg-12 col-form-label login-form-lablel">Exp.
+                                        Date</label>
+                                    <div class="col-sm-5">
+                                        <select class="form-control" aria-placeholder="YY" name="expDate"
+                                            [(ngModel)]="creditCardIn.expMonth">
+                                            <option>01</option>
+                                            <option>02</option>
+                                            <option>03</option>
+                                            <option>04</option>
+                                            <option>05</option>
+                                            <option>06</option>
+                                            <option>07</option>
+                                            <option>08</option>
+                                            <option>09</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                        </select>
+                                    </div>
+                                    <span style="font-size: 26px;">/</span>
+                                    <div class="col-sm-5">
+                                        <select class="form-control" aria-placeholder="YY" name="expYear"
+                                            [(ngModel)]="creditCardIn.expYear">
+                                            <option *ngFor="let year of years">{{year}}</option>
+                                        </select>
+                                    </div>
+                                    <span class="required-field ml-3 animated fadeIn"
+                                        *ngIf="singInFormComp.submitted && (singInFormComp.controls.expDate.pristine || singInFormComp.controls.expYear.pristine)">
+                                        Ingrese dia de expiracion.
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-3">
+                                <label class="col-sm-12 col-md-12 col-lg-3 col-form-label login-form-lablel">Total a
+                                    pagar: $</label>
+                                <div class="col-sm-9">
+                                    <!-- <input type="number" class="form-control" style="background-color: white;" required placeholder="$ 100" readonly name="total" [(ngModel)]="planSpecs.price"> -->
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">$</div>
+                                        </div>
+                                        <input type="text" class="form-control" style="background-color: white;"
+                                            placeholder="100" readonly name="total" [(ngModel)]="planSpecs.price">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-group row mb-4 d-flex justify-content-center">
                             ¿Ya tienes cuenta una cuenta? &nbsp;
                             <a style="color: var(--main-color);" routerLink="/login">Iniciar sesión</a>
                         </div>
                         <div class="col-12 d-flex justify-content-center">
-                            <button type="button" class="btn dg-btn-tercero m-2">CANCELAR</button>
+                            <button type="button" class="btn dg-btn-tercero m-2" (click)="return()">CANCELAR</button>
                             <button type="submit" class="btn dg-btn-primero m-2">CONFIRMAR</button>
                         </div>
                     </form>

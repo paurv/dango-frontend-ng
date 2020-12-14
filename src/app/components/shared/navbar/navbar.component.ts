@@ -11,6 +11,7 @@ import { UsersService } from '../../../services/users.service';
 export class NavbarComponent implements OnInit {
 
   pageName = 'Configuracion de pagina';
+  companyName: string;
 
   constructor( public routerLocation: Router,
                private usersService: UsersService,
@@ -18,15 +19,23 @@ export class NavbarComponent implements OnInit {
 
   currentUser: any = {};
   ngOnInit(): void {
-    console.log('nombre pag: ', this.pageName);
     this.usersService.getCurrentUser( localStorage.getItem('token') )
     .subscribe( resp => {
-      // console.log(resp);
+      console.log(resp);
       this.currentUser = resp.user;
     }, err => {
       console.log(err);
     });
-    this.pageName = this.storesService.pageName;
+
+    // this.pageName = this.storesService.pageName;
+    this.storesService.getUserStore( localStorage.getItem('token') )
+    .subscribe( resp => {
+      if ( resp.storeUser != null ) {
+        this.companyName = resp.storeUser.name;
+      }
+    }, err => {
+      console.log(err);
+    });
   }
 
   regresar(): void{

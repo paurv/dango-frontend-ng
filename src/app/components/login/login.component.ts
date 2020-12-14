@@ -46,12 +46,19 @@ export class LoginComponent implements OnInit {
         .subscribe( res => {
           console.log( res );
           Swal.close();
+          this.storesService.getUserStore( res.token )
+              .subscribe( store => {
+                console.log(store);
 
-          if ( res.user.role === 'Empresa' ) {
-            this.router.navigateByUrl('/admin-companies');
-          } else if ( res.user.role === 'Admin' ) {
-            this.router.navigateByUrl('/admin');
-          }
+                if ( res.user.role === 'Empresa' ) {
+                  this.router.navigate(['/admin-companies', store.storeUser._id]);
+                } else if ( res.user.role === 'Admin' ) {
+                  this.router.navigateByUrl('/admin');
+                }
+
+              }, error => {
+                console.log(error);
+              });
         }, err => {
           Swal.close();
           this.failedReq = true;

@@ -1,1 +1,43 @@
-<p>companies works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div>
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: fixed; z-index: 1000; width: -webkit-fill-available;">
+          <a class="navbar-brand" href="#" *ngIf="currentStore"> {{currentStore.name}} </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="margin-left: 60%;">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav" *ngIf="currentStore">
+              <li class="nav-item" *ngFor="let page of currentStore.pages">
+                <a class="nav-link" (click)="getPage(page._id)" style="cursor: pointer;"> {{page.pageName}} <span class="sr-only">(current)</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="d-flex justify-content-end"> <button type="button" class="btn" (click)="shop()"><i class="fas fa-shopping-cart fa-2x" style="color: var(--d-pink);"></i> </button> </div>
+      </nav>
+  
+      <!-- Body -->
+      <div class="content">
+        <div *ngIf="!toggleButton">
+          <div *ngIf="pageId"><div [innerHTML]="storeHtml"></div></div>
+        </div>
+        <app-shoppingcart *ngIf="toggleButton"></app-shoppingcart>
+      </div>
+  </div>
+
+    <script>
+        // script goes here
+    </script>
+</body>
+</html>

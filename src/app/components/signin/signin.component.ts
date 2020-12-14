@@ -160,4 +160,9 @@ export class SigninComponent implements OnInit {
       }
   }
 
+  return(): void {
+    this.nextForm = false;
+    this.user = null;
+  }
+
 }
