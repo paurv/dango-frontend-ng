@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
           Swal.close();
           this.storesService.getUserStore( res.token )
               .subscribe( store => {
-                console.log(store.storeUser._id);
+                console.log(store);
 
                 if ( res.user.role === 'Empresa' ) {
                   this.router.navigate(['/admin-companies', store.storeUser._id]);

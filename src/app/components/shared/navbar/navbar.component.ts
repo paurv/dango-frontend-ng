@@ -19,7 +19,6 @@ export class NavbarComponent implements OnInit {
 
   currentUser: any = {};
   ngOnInit(): void {
-    // console.log('nombre pag: ', this.pageName);
     this.usersService.getCurrentUser( localStorage.getItem('token') )
     .subscribe( resp => {
       console.log(resp);
@@ -28,15 +27,15 @@ export class NavbarComponent implements OnInit {
       console.log(err);
     });
 
+    // this.pageName = this.storesService.pageName;
     this.storesService.getUserStore( localStorage.getItem('token') )
     .subscribe( resp => {
-      console.log( resp );
-      this.companyName = resp.storeUser.name;
-      console.log(this.companyName);
+      if ( resp.storeUser != null ) {
+        this.companyName = resp.storeUser.name;
+      }
     }, err => {
       console.log(err);
     });
-    // this.pageName = this.storesService.pageName;
   }
 
   regresar(): void{

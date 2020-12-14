@@ -64,48 +64,11 @@ export class SitioConfigComponent implements OnInit {
         }, err => {
           console.log(err);
         });
-
-    // let tempHtml = '';
-    // tempHtml +=
-    // this.arregloHtml.forEach( html => {
-    //   switch ( html.tipo ) {
-    //     case 1 : {
-    //       for ( const content of html.contenido ) {
-    //         tempHtml += `<div class="row"><div class="col-12">`;
-    //         tempHtml += content.htmlObj;
-    //         tempHtml += `</div></div>`;
-    //       }
-    //       break;
-    //     }
-    //     case 2 : {
-    //       for ( let i = 0; i < html.contenido.length; i++ ) {
-    //         if ( i === 0) { tempHtml += `<div class="row">`; }
-    //         tempHtml += `<div class="col-6">`;
-    //         tempHtml += html.contenido[i].htmlObj;
-    //         // console.log('contenido i: ', html.contenido[i].htmlObj);
-    //         tempHtml += `</div>`;
-    //         if ( i === (html.contenido.length - 1)) { tempHtml += `</div>`; }
-    //       }
-    //       break;
-    //     }
-    //     case 3 : {
-    //       for ( let i = 0; i < html.contenido.length; i++ ) {
-    //         if ( i === 0) { tempHtml += `<div class="row">`; }
-    //         tempHtml += `<div class="col-4">`;
-    //         tempHtml += html.contenido[i].htmlObj;
-    //         tempHtml += `</div>`;
-    //         if ( i === (html.contenido.length - 1)) { tempHtml += `</div>`; }
-    //       }
-    //       break;
-    //     }
-    //   }
-    //   console.log(tempHtml);
-    // });
   }
 
-
-
-  // logica de la cofiguracion =================>>>>
+  // ===============================================
+  // Logica de la cofiguracion
+  // ===============================================
 
   contenidoCodigo(contHtml, contCss: any = '<style></style>', contJs?): void {
     this.htmlCode = contHtml.value;

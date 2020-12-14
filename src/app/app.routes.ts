@@ -27,7 +27,8 @@ export const ROUTES: Routes = [
     { path: 'not-found', component: NotFoundComponent },
     { path: 'login', component: LoginComponent },
     { path: 'sign-in', component: SigninComponent },
-    { path: 'companies', component: CompaniesComponent },
+    { path: 'companies/:idCompany', component: CompaniesComponent },
+    { path: 'companies/:idCompany/pages/:pageId', component: CompaniesComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'not-found' },
 ];
 

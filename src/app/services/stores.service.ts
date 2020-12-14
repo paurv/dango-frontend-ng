@@ -62,6 +62,10 @@ export class StoresService {
     return this.httpClient.put(`${ this.url }/stores/${ idStore }/pageEdition/${ idPage }`, data, { headers: httpHeaders });
   }
 
+  getAllStores(): Observable <any> {
+    return this.httpClient.get(`${ this.url }/stores`, {});
+  }
+
   set page(page: string) {
     this.selectedPageId = page;
   }
