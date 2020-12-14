@@ -9,7 +9,6 @@ export class TransRutaPipe implements PipeTransform {
     value = value.toLowerCase();
     const nombre: string[] = value.split('/');
     value = nombre[2].charAt(0).toUpperCase() + nombre[2].substr(1);
-    // console.log(nombre[2])
     return value;
   }
 

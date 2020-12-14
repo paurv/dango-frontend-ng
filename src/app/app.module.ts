@@ -40,6 +40,7 @@ import { SigninComponent } from './components/signin/signin.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ShoppingcartComponent } from './components/client/shoppingcart/shoppingcart.component';
+import { LandingComponent } from './components/landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { ShoppingcartComponent } from './components/client/shoppingcart/shopping
     LoginComponent,
     SigninComponent,
     CompaniesComponent,
-    ShoppingcartComponent
+    ShoppingcartComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
