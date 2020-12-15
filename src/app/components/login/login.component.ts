@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
       text: 'Espere un momento...'
     });
     Swal.showLoading();
-    // console.log('user: ', this.user);
+    console.log('user: ', this.user);
 
     this.authService.login( this.user )
         .subscribe( res => {

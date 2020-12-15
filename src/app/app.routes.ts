@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { CompaniesComponent } from './components/client/companies/companies.component';
 import { LandingComponent } from './components/landing/landing.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 
@@ -19,12 +20,14 @@ export const ROUTES: Routes = [
     {
         path: 'admin-companies/:idStore',
         component: AdminCompaniesComponent,
-        children: COMPANIES_ROUTES
+        children: COMPANIES_ROUTES,
+        canActivate: [ AuthGuard ]
     },
     {
         path: 'admin',
         component: AdminComponent,
-        children: ADMIN_ROUTES
+        children: ADMIN_ROUTES,
+        canActivate: [ AuthGuard ]
     },
     { path: 'not-found', component: NotFoundComponent },
     { path: 'login', component: LoginComponent },

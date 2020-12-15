@@ -25,7 +25,8 @@
                     </div>
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" [routerLink]="'/login'">Logout</a>
+                    <!-- [routerLink]="'/login'" -->
+                    <a class="dropdown-item" (click)="logout()" style="cursor: pointer;">Logout</a>
                 </div>
             </div>
         </div>

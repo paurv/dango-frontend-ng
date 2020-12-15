@@ -48,13 +48,33 @@ export class AuthService {
   }
 
   // falta
-  logOut(): Observable<any> {
-    return this.httpClient.get('', {});
+  logOut(): void {
+    localStorage.removeItem('token');
+  }
+
+  isAuthenticated(): boolean {
+    if ( this.userToken.length < 2 ) {
+      return false;
+    }
+    const expires = Number(localStorage.getItem('expires'));
+    const expireToday = new Date();
+    expireToday.setTime(expires);
+    // return this.userToken.length > 2;
+    if ( expireToday > new Date() ) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   private saveToken( token: string ): void {
     this.userToken = token;
     localStorage.setItem('token', token);
+
+    const today = new Date();
+    today.setSeconds( 3600 );
+
+    localStorage.setItem( 'expires', today.getTime().toString() );
   }
 
   private readToken(): string {

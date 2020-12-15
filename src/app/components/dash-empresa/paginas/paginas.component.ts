@@ -51,7 +51,7 @@ export class PaginasComponent implements OnInit {
   ngOnInit(): void {
     this.storeService.getUserStore( localStorage.getItem('token') )
         .subscribe( resp => {
-          console.log(resp);
+          // console.log(resp);
           this.idStore = resp.storeUser._id;
           this.pages = resp.storeUser.pages;
         }, err => {
@@ -61,6 +61,13 @@ export class PaginasComponent implements OnInit {
 
    newPage( form: NgForm ): void{
     if ( form.invalid ) {
+      Swal.fire({
+        position: 'center',
+        icon: 'warning',
+        title: 'Favor llene todos los campos',
+        showConfirmButton: false,
+        timer: 1300
+      });
       return;
     }
     console.log(form);
@@ -73,7 +80,7 @@ export class PaginasComponent implements OnInit {
     console.log(data);
     this.storeService.createPage( this.idStore, localStorage.getItem('token'), data)
         .subscribe( resp => {
-          console.log( resp );
+          // console.log( resp );
           this.newPageData = {};
           this.pages = resp.newPage.pages;
         }, err => {
@@ -82,7 +89,6 @@ export class PaginasComponent implements OnInit {
    }
 
    deletePage( idpage ): void {
-
     Swal.fire({
       title: '¿Seguro que quieres borrar?',
       showConfirmButton: false,
@@ -90,11 +96,10 @@ export class PaginasComponent implements OnInit {
       showCancelButton: true,
       denyButtonText: `Borrar`,
     }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
       if (result.isDenied) {
         this.storeService.deletePage( this.idStore, localStorage.getItem('token'), idpage)
         .subscribe( resp => {
-          console.log(resp);
+          // console.log(resp);
           Swal.fire('Pagina Eliminada', '', 'success');
           this.pages = resp.newPageArray;
         }, err => {
@@ -116,7 +121,7 @@ export class PaginasComponent implements OnInit {
     return this.pagsArr;
   }
 
-  sendPageId( pageId, name ){
+  sendPageId( pageId, name ): void{
     this.storeService.page = pageId;
     this.storeService.pageName = name;
     console.log( this.storeService.pageName );

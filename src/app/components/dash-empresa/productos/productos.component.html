@@ -3,10 +3,10 @@
     <div class="container">
         <div class="row d-flex justify-content-end">
             <div class="d-flex justify-content-end col-sm-12 col-md-8 mb-2">
-                <button type="button" class="btn dg-btn-segundo mr-2" data-toggle="modal"
-                    data-target="#modal-bancoimg" (click)="categ = true">Gestionar Categorias</button>
-                <button type="button" class="btn dg-btn-primero" data-toggle="modal"
-                data-target="#modal-bancoimg" (click)="categ = false">Nuevo Producto</button>
+                <button type="button" class="btn dg-btn-segundo mr-2" data-toggle="modal" data-target="#modal-bancoimg"
+                    (click)="categ = true">Gestionar Categorias</button>
+                <button type="button" class="btn dg-btn-primero" data-toggle="modal" data-target="#modal-bancoimg"
+                    (click)="categ = false">Nuevo Producto</button>
             </div>
             <div class="col-sm-12 col-md-4">
                 <input type="text" class="form-control" aria-describedby="Search" placeholder="Search">
@@ -18,89 +18,23 @@
             <table class="table dash-lista-productos">
                 <thead>
                     <tr>
-                        <th scope="col">Img</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Inventario</th>
                         <th scope="col">Categoria</th>
+                        <th scope="col">Precio</th>
                         <th scope="col">Accion</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><img src="assets/img/preview.jpeg" alt=""></td>
-                        <td>Producto n</td>
-                        <td>456 en cStok</td>
-                        <td>Categoria x</td>
+                    <tr *ngFor="let product of products">
+                        <td>{{product.name}}</td>
+                        <td>{{product.stock}} en Stok</td>
+                          <td>{{product.category}}</td>
+                          <td class="font-weight-bold" style="color: var(--main-color);">$ {{product.price}}</td>
                         <td>
-                            <button type="button" class="btn dg-btn-delete mr-2"><i
-                                    class="far fa-trash-alt"></i></button>
-                            <button type="button" class="btn dg-btn-edit"><i class="fas fa-pen"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><img src="assets/img/preview.jpeg" alt=""></td>
-                        <td>Producto n</td>
-                        <td>456 en Stock</td>
-                        <td>Categoria x</td>
-                        <td>
-                            <button type="button" class="btn dg-btn-delete mr-2"><i
-                                    class="far fa-trash-alt"></i></button>
-                            <button type="button" class="btn dg-btn-edit"><i class="fas fa-pen"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><img src="assets/img/preview.jpeg" alt=""></td>
-                        <td>Producto n</td>
-                        <td>456 en Stock</td>
-                        <td>Categoria x</td>
-                        <td>
-                            <button type="button" class="btn dg-btn-delete mr-2"><i
-                                    class="far fa-trash-alt"></i></button>
-                            <button type="button" class="btn dg-btn-edit"><i class="fas fa-pen"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><img src="assets/img/preview.jpeg" alt=""></td>
-                        <td>Producto n</td>
-                        <td>456 en Stock</td>
-                        <td>Categoria x</td>
-                        <td>
-                            <button type="button" class="btn dg-btn-delete mr-2"><i
-                                    class="far fa-trash-alt"></i></button>
-                            <button type="button" class="btn dg-btn-edit"><i class="fas fa-pen"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><img src="assets/img/preview.jpeg" alt=""></td>
-                        <td>Producto n</td>
-                        <td>456 en Stock</td>
-                        <td>Categoria x</td>
-                        <td>
-                            <button type="button" class="btn dg-btn-delete mr-2"><i
-                                    class="far fa-trash-alt"></i></button>
-                            <button type="button" class="btn dg-btn-edit"><i class="fas fa-pen"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><img src="assets/img/preview.jpeg" alt=""></td>
-                        <td>Producto n</td>
-                        <td>456 en Stock</td>
-                        <td>Categoria x</td>
-                        <td>
-                            <button type="button" class="btn dg-btn-delete mr-2"><i
-                                    class="far fa-trash-alt"></i></button>
-                            <button type="button" class="btn dg-btn-edit"><i class="fas fa-pen"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><img src="assets/img/preview.jpeg" alt=""></td>
-                        <td>Producto n</td>
-                        <td>456 en Stock</td>
-                        <td>Categoria x</td>
-                        <td>
-                            <button type="button" class="btn dg-btn-delete mr-2"><i
-                                    class="far fa-trash-alt"></i></button>
-                            <button type="button" class="btn dg-btn-edit"><i class="fas fa-pen"></i></button>
+                            <button type="button" class="btn dg-btn-delete mr-2" (click)="delProduct( product._id )">
+                                <i class="far fa-trash-alt"></i></button>
+                            <button type="button" class="btn dg-btn-edit" (click)="editProduct(product)" data-toggle="modal" data-target="#modal-bancoimg"><i class="fas fa-pen"></i></button>
                         </td>
                     </tr>
                 </tbody>
@@ -131,35 +65,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Categ1</td>
+                            <tr *ngFor="let categ of categories">
+                                <td>{{categ.name}}</td>
                                 <td>
-                                    <button type="button" class="btn dg-btn-delete mr-2"><i
-                                            class="far fa-trash-alt"></i></button>
-                                    <button type="button" class="btn dg-btn-edit"><i class="fas fa-pen"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Categ1</td>
-                                <td>
-                                    <button type="button" class="btn dg-btn-delete mr-2"><i
-                                            class="far fa-trash-alt"></i></button>
-                                    <button type="button" class="btn dg-btn-edit"><i class="fas fa-pen"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Categ1</td>
-                                <td>
-                                    <button type="button" class="btn dg-btn-delete mr-2"><i
-                                            class="far fa-trash-alt"></i></button>
-                                    <button type="button" class="btn dg-btn-edit"><i class="fas fa-pen"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Categ1</td>
-                                <td>
-                                    <button type="button" class="btn dg-btn-delete mr-2"><i
-                                            class="far fa-trash-alt"></i></button>
+                                    <button type="button" class="btn dg-btn-delete mr-2" (click)="deleteCateg(categ._id)"><i class="far fa-trash-alt"></i></button>
                                     <button type="button" class="btn dg-btn-edit"><i class="fas fa-pen"></i></button>
                                 </td>
                             </tr>
@@ -168,31 +77,38 @@
                 </div>
                 <hr>
                 <div class="container mt-4 mb-3 col-10">
-                    <input type="email" class="form-control" placeholder="Nueva Categoria">
+                    <!-- #categName -->
+                    <input type="text" class="form-control" placeholder="Nombre Nueva Categoria" name="category"
+                        [(ngModel)]="categName">
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn dg-btn-tercero" data-dismiss="modal">Salir</button>
+                    <!-- data-dismiss="modal" -->
+                    <button type="button" class="btn dg-btn-primero" (click)="addCateg(categName)">Agregar</button>
                 </div>
             </div>
             <div class="modal-body" *ngIf="categ == false">
-                <form>
+                <form (ngSubmit)="addProduct(product)" #product="ngForm">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Nombre">
+                        <input type="text" class="form-control" placeholder="Nombre" name="name" required [(ngModel)]="newProduct.name">
                     </div>
                     <div class="form-group">
-                        <input type="number" min="1" max="1000" class="form-control" placeholder="Inventario">
+                        <input type="number" min="1" max="1000" class="form-control" placeholder="Inventario" name="stock" required [(ngModel)]="newProduct.stock">
                     </div>
                     <div class="form-group">
-                        <select class="form-control" id="exampleFormControlSelect1">
-                          <option>-- categoria --</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
+                        <input type="number" min="1" max="1000" class="form-control" placeholder="Precio" name="price" required [(ngModel)]="newProduct.price">
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" name="category" required [(ngModel)]="newProduct.category">
+                            <option>-- categorias --</option>
+                            <option *ngFor="let categ of categories" [value]="categ.name">{{categ.name}}</option>
                         </select>
                     </div>
-                  </form>
-            </div>
-            <div class="modal-footer justify-content-center">
-                <button type="button" class="btn dg-btn-tercero" data-dismiss="modal">Salir</button>
-                <button type="button" class="btn dg-btn-primero">Guardar</button>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn dg-btn-tercero" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn dg-btn-primero">Guardar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { StoresService } from '../../../services/stores.service';
 import { UsersService } from '../../../services/users.service';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -15,13 +16,14 @@ export class NavbarComponent implements OnInit {
 
   constructor( public routerLocation: Router,
                private usersService: UsersService,
-               private storesService: StoresService ) { }
+               private storesService: StoresService,
+               private authService: AuthService ) { }
 
   currentUser: any = {};
   ngOnInit(): void {
     this.usersService.getCurrentUser( localStorage.getItem('token') )
     .subscribe( resp => {
-      console.log(resp);
+      // console.log(resp);
       this.currentUser = resp.user;
     }, err => {
       console.log(err);
@@ -36,6 +38,11 @@ export class NavbarComponent implements OnInit {
     }, err => {
       console.log(err);
     });
+  }
+
+  logout(): void {
+    this.authService.logOut();
+    this.routerLocation.navigateByUrl('/login');
   }
 
   regresar(): void{
