@@ -17,6 +17,7 @@ import { AuthGuard } from './guards/auth.guard';
 
 
 export const ROUTES: Routes = [
+    { path: '', component: LandingComponent },
     {
         path: 'admin-companies/:idStore',
         component: AdminCompaniesComponent,
