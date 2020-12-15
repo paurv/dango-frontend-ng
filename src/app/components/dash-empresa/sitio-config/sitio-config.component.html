@@ -74,7 +74,7 @@
                     *ngIf="cuadros.tipo === 1">
                     <iframe id="cuadro-{{cuadros.id}}-{{cuadros.contenido[0].orden}}"
                         style="width: -webkit-fill-available; height: 500px;"></iframe>
-                    <div class="pantalla"></div>
+                    <div class="pantalla">Seleccionar</div>
                 </div>
             </div>
             <div class="row" *ngIf="cuadros.tipo === 2">
@@ -82,13 +82,13 @@
                     *ngIf="cuadros.contenido[0]">
                     <iframe id="cuadro-{{cuadros.id}}-{{cuadros.contenido[0].orden}}"
                         style="width: -webkit-fill-available; height: 500px;"></iframe>
-                    <div class="pantalla"></div>
+                    <div class="pantalla">Seleccionar</div>
                 </div>
                 <div class="col-6 p-0" (click)="selector('cuadro-'+cuadros.id +'-'+ cuadros.contenido[1].orden)"
                     *ngIf="cuadros.contenido[1]">
                     <iframe id="cuadro-{{cuadros.id}}-{{cuadros.contenido[1].orden}}"
                         style="width: -webkit-fill-available; height: 500px;"></iframe>
-                    <div class="pantalla"></div>
+                    <div class="pantalla">Seleccionar</div>
                 </div>
             </div>
             <div class="row" *ngIf="cuadros.tipo === 3">
@@ -96,19 +96,19 @@
                     *ngIf="cuadros.contenido[0]">
                     <iframe id="cuadro-{{cuadros.id}}-{{cuadros.contenido[0].orden}}"
                         style="width: -webkit-fill-available; height: 500px;"></iframe>
-                    <div class="pantalla"></div>
+                    <div class="pantalla">Seleccionar</div>
                 </div>
                 <div class="col-4 p-0" (click)="selector('cuadro-'+cuadros.id +'-'+ cuadros.contenido[1].orden)"
                     *ngIf="cuadros.contenido[1]">
                     <iframe id="cuadro-{{cuadros.id}}-{{cuadros.contenido[1].orden}}"
                         style="width: -webkit-fill-available; height: 500px;"></iframe>
-                    <div class="pantalla"></div>
+                    <div class="pantalla">Seleccionar</div>
                 </div>
                 <div class="col-4 p-0" (click)="selector('cuadro-'+cuadros.id +'-'+ cuadros.contenido[2].orden)"
                     *ngIf="cuadros.contenido[2]">
                     <iframe id="cuadro-{{cuadros.id}}-{{cuadros.contenido[2].orden}}"
                         style="width: -webkit-fill-available; height: 500px;"></iframe>
-                    <div class="pantalla"></div>
+                    <div class="pantalla">Seleccionar</div>
                 </div>
             </div>
         </div>

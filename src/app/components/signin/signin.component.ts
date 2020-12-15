@@ -132,12 +132,11 @@ export class SigninComponent implements OnInit {
                       this.storesService.createStore( data, res.token )
                           .subscribe( store => {
                             console.log(store);
-
-                            // if ( res.role === 'Empresa' ) {
-                            //   this.router.navigateByUrl('admin-companies');
-                            // } else if ( res.role === 'Admin' ) {
-                            //   this.router.navigateByUrl('admin');
-                            // }
+                            if ( res.user.role === 'Empresa' ) {
+                              this.router.navigate(['/admin-companies', store.store._id]);
+                            } else if ( res.user.role === 'Admin' ) {
+                              this.router.navigateByUrl('admin');
+                            }
                           }, errStore => {
                             console.log(errStore);
                           });

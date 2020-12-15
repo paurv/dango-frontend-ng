@@ -109,12 +109,24 @@ input[type=checkbox] {
 }
 
 .pantalla{
-  top: 0;
+  /* top: 0;
   left: 0;
   width: 90%;
   height: -webkit-fill-available;
   position: absolute;
-  width: -webkit-fill-available;
+  width: -webkit-fill-available; */
+  top: 0;
+  right: 0;
+  position: absolute;
+  width: 110px;
+  background-color: #ffc0cb66;
+  height: 36px;
+  border-radius: 3px;
+  text-align: center;
+  color: #0000009c;
+  padding-top: 4px;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .iframe{
