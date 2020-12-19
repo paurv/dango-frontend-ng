@@ -3,14 +3,10 @@
 
 #
 
-# Frontend
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
-
-#
-
 # Dango-frontend-ng
 Es la parte de frontend del proyecto Dango, un SAAS destinado para comercio electronico, donde un usuario puede registrarse para comprar o crear su propia pagina de comercio electronico.
+
+Proyecto generado con [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
 #
 
