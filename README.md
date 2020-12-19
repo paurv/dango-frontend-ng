@@ -10,6 +10,18 @@ Proyecto generado con [Angular CLI](https://github.com/angular/angular-cli) vers
 
 #
 
+# Contenidos:
+
+## Login
+![dashboard](https://github.com/paurv/dango-frontend-ng/blob/master/src/assets/img/login.png?raw=true)
+
+#
+
+## Dashboard para Usuarios Empresa
+![dashboard](https://github.com/paurv/dango-frontend-ng/blob/master/src/assets/img/dashboad.png?raw=true)
+
+#
+
 ## Configuracion de Paginas web
 ![configpage](https://github.com/paurv/dango-frontend-ng/blob/master/src/assets/img/configuration_screen.png?raw=true)
 
